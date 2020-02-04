@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Sonsie+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kristi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+
+        <div class="title">
+          <span>PS70: Digital Fabrication</span>
+         <h1>Kassia</h1><br><br>
+         <h2>Love</h2>
+        </div>
+
+
+      </div>
+
+        <div class="content">
+          <div class="portfolio-items-wrapper">
+
+
+          <a href="about.html">  <div class="portfolio-item">
+              <div class="portfolio-img-background" style="background-image:url(images/about.jpg)"></div>
+
+              <div class="img-text">
+                <div class="logo">
+                  <h1>
+                    About
+                  </h1>
+                </div>
+                <div class="subtitle">
+                  About me
+                </div>
+              </div>
+            </div>  </a>
+
+          <a href="assignments.html">     <div class="portfolio-item">
+             <div class="portfolio-img-background" style="background-color: #CCEEDD"></div>
+
+              <div class="img-text">
+                <div class="logo">
+                  <h1>
+                    Assignments
+                  </h1>
+                </div>
+                <div class="subtitle">
+                  Learning in progress
+                </div>
+              </div>
+            </div> </a>
+
+          </div><!-- Closes items-wrapper -->
+        </div><!-- Closes content-->
+
+</div> <!-- CLOSES CONTAINER -->
+
+  </body>
+
+  <script>
+  const portfolioItems = document.querySelectorAll('.portfolio-item')
+
+  portfolioItems.forEach(portfolioItem => {
+    portfolioItem.addEventListener('mouseover', () => {
+      portfolioItem.childNodes[1].classList.add('img-darken');
+    }) })
+  portfolioItems.forEach(portfolioItem => {
+    portfolioItem.addEventListener('mouseout', () => {
+      portfolioItem.childNodes[1].classList.remove('img-darken');
+    })
+
+  })
+</script>
+</html>
