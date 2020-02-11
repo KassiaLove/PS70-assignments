@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Sonsie+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kristi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+      .content{
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      /*SCROLLBAR*/
+      ::-webkit-scrollbar{
+      	width: 7px;
+      }
+      ::-webkit-scrollbar-track{
+      	border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb{
+      	background: linear-gradient(125deg,#fff,#000);
+      	border-radius: 10px;
+      }
+      span{
+        position:absolute;
+        top: 2%;
+        left: 2%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+      .title{
+        width: 100%;
+        text-align: center;
+        height: 200px;
+      }
+      .title h1,.title h2{
+        font-family: 'Kristi', cursive;
+        margin: 0;
+        font-weight: 300;
+      }
+      .title h1{
+        font-size: 10em;
+        top: 0;
+        transform: translateY(-20%);
+      }
+      .title h2{
+        font-size: 8em;
+        top: 0;
+        transform: translateY(-110%);
+      }
+      .title a{
+        text-decoration: none;
+        color: #000;
+        position:absolute;
+        top: 10%;
+        left: 10%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+
+      .title a::after{
+      	content: '';
+      	display: block;
+      	width: 0;
+      	height: 2px;
+      	background: #000;
+      	transition: width .3s;
+      }
+      .title a:hover::after{
+      	width: 100%;
+      	transition: width 0.3s;
+      }/**************************************************************************/
+
+      .sticky-two-column{
+        display: grid;
+        grid-template-columns: 1fr 1fr; /*make 2 columns*/
+        width: 100%;
+      }
+      .sticky-right, .sticky-left{
+        padding: 1.25em;
+        padding-top: 0;
+        margin-top: 0;
+        font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      img.sticky{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 5%;
+        width: 90%;
+      }
+      .tab{
+        text-indent:40px;
+      }
+
+    </style>
+    <title>Week 2</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+
+        <div class="title">
+          <span>PS70: Digital Fabrication</span>
+         <h1>Kassia</h1><br><br>
+         <h2>Love</h2>
+         <a href="index.html">Home</a>
+        </div>
+
+
+      </div>
+      <div class="content">
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week2-1.jpg">
+      </div>
+      <div class="sticky-right">
+        <h1>Week 2: 2D Design and Cutting</h1>
+    <p class="tab">
+      This we learned about using computer aided design (Fusion 360), lazer cutting, and vinyl cutting. I have used SolidWorks before, so it was very interesting to see how Fusion 360 was different, and I have to say it is a lot easier to use Fusion 360. It has a more friendly userface and was pretty easy to pick up and learn compared to SolidWorks. The main assignment of this week was to use the lazer cutting to make press fit pieces of cardboard. And with the right things put into consideration, like kerf, you can build something that doesn't require any supplementary material like glue. The basic layout of lazercutting something is making a 2D sketch in Fusion360, extrude it into 3D, make a 2D projection of that extrusion, convert that to a DXF file, and then feed that file to the lazer cutter. Using a lazer cutter seems scary and convoluted at first. But after a couple of cuts, the process just came down to a number game of getting the slots of the piece correct.
+    </p>
+    <p class="tab">
+      For this week's assignment of a press fit kit, I didn't really have an overall end shape in mind. I decided to experiment with the slots on a square piece and also tried out a simple triangle piece. For the square piece, instead of having four slots on each of the four respective sides, I decided (with inspiration from the internet) to try to put some slots in the corners of the square. For the triangle piece I just wanted to try making a press fit piece on my own following the instructions from the lecture. I like the number three, and a triangle has three sides and can build some cool things.
+    </p>
+    <p class="tab">
+      When building the pieces, the most important thing to remember is the kerf of the laser, which is a constant, and our case was 0.2mm. Next, for the width of my notches, they are (thickness-kerf). The thickness is the thickness of the material and kerf is accounting for how much material is going to be burned away. When making the notches, if you don't account for kerf, your notches will be too big and won't get that nice strudy grip on another piece. My first CAD model had a thickness of 4.4mm, but when I cut it didn't really fit. Knowing I took into account kerf, I used a digital calliber to measure the cardboard I was going to lasercut, and I found that the was actually around 3.8mm. Changing this made the rest of my pieces work perfectly. A little to perfectly actually, as they are very far to put together, and even harder to take apart. Maybe next time I should round up a tiny bit more.
+    </p>
+    <p class="tab">
+      When using the lasercutter I used these parameters: </p>
+      <p style="margin: 40px">max_speed = 60 <br>
+      min_speed = 60 <br>
+      power = 30 <br></p>
+    </div>
+    </div>
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+        <h3> First Cut </h3>
+        <p class="tab">
+          First I started off with a simple square piece and a simple triangle. For the square piece, first I made a 2D sketch of a square with a side length of 40mm, thickness of  4.4mm, and a kerf of 0.2mm. After drawing the square you want to make a construction line from the center of the square upwards of length (side/4). This will serve as the top of the notch. Then to the get the width of the notch, you make a line from the top of the notch out toward the side of length, (thickness-kerf)/2. Very important to take kerf into play.Then you make a line from the endpoint of the line just made, to the respective side of the square. After that, to get the the full slot, you just have to mirror the two lines that were made. Now that the full slot is done, we can circular mirror/pattern it around the square so we don't have to draw it 3 more times. Now that the full sketch is done, we can extrude it out a distance of the amount, thickness. After this we can add some fillets to make the piece have more curved edges. In this first cut the fillet radius is around 2mm. It is important to note that one can only add fillets after they have extruded their sketch. So now that we want to print this sketch, including the fillets we have now added to the 3D model, we have to project the 3D model back down onto the 2D plan so that we can tell the laser cutter to cut the 2D sketch. So after projecting it back down to the 2D plan, we can convert that sketch file into DXF and print on the laser cutter. This square piece I didn't end up cutting because when I looked at it on the print screen of the laser cutter, the notches seemed too wide, and they were in fact too wide because I had the wrong thickness as a variable. So if I would've cut them out, they wouldn't have fit nicely together as wanted.
+        </p>
+        <p class="tab">
+          So overall parameters: </p>
+          <p style="margin: 40px">side_length = 40mm <br>
+          thickness = 4.40mm <br>
+          kerf = 0.2mm <br></p>
+
+    </div>
+    <div class="sticky-right">
+        <img class="sticky" src="images/week2-firstcut.png">
+    </div>
+
+    </div>
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week2-firsttcut.png">
+      </div>
+      <div class="sticky-right">
+    <p class="tab">
+      This triangle piece has the same process as the square piece. Instead this time the side length was 50mm. Thickness and kerf stayed the same at 4.4mm, and a kerf of 0.2mm. After drawing the triangle, I applied the same method of drawing the notch. This time the top of the notch was at (side/6) away from  the center of the triangle. The width of the notch stayed the same at (thickness-kerf)/2. After the whole notch was drawn, I used circular pattern to get notches on the other two sides. After the sketch was done, I extruded it a distance of thickness. After this I made some fillets in the notches to help with the process of putting the pieces together. The fillet radius is around 2mm. This triangle piece I did laser cut, and after putting the pieces together, they didn't really hold onto each other. This is when I realized that their thickness was wrong. Using a digital calliber, I measured the thickness to actually be aroudn 3.8mm. After fixing this in my sketch, the triangle pieces fit perfectly together!
+    </p>
+    <p class="tab">
+      So final parameters: </p>
+      <p style="margin: 40px">side_length = 50mm <br>
+      thickness = 3.80mm <br>
+      kerf = 0.2mm <br></p>
+    </div>
+    </div>
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week2trianglewrong.jpg">
+    <p style="margin-left: 25%;">Notches are too big</p>
+      </div>
+      <div class="sticky-right">
+        <img class="sticky" src="images/week2triangleright.jpg">
+        <p style="margin-left: 30%;">Notches perfect!</p>
+    </div>
+    </div>
+
+
+
+
+
+
+    </div>
+    </div> <!-- Closes Container -->
+  </body>
+</html>

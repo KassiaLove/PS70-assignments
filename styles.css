@@ -1,6 +1,25 @@
 .content{
   overflow-x: hidden;
+  font-family: 'Nanum Gothic', sans-serif;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*SCROLLBAR*/
 ::-webkit-scrollbar{
 	width: 7px;
@@ -39,7 +58,9 @@ span{
   top: 0;
   transform: translateY(-110%);
 }
+
 .portfolio-items-wrapper{
+  overflow-y: hidden;
 	display: grid;
 	grid-template-columns: 1fr 1fr; /*make 2 columns*/
   width: 100%;
@@ -61,6 +82,7 @@ span{
 	background-repeat: no-repeat;
 	overflow: hidden;
   position: relative;
+  transform-style: preserve-3d;
 }
 
 .img-text{
@@ -74,6 +96,7 @@ span{
   height: 83.5px;
   text-align: center;
   padding-top: 80px;
+  transform: translateZ(10em);
 }
 .logo h1{
   vertical-align: middle;
@@ -89,7 +112,6 @@ span{
 	text-decoration: none;
 	color: #fff;
 }
-
 /* Needs to be more specific if someone is hovering over it*/
 .img-text .subtitle{
   text-align: center;
@@ -117,8 +139,72 @@ span{
 mobile version it should just show the text */
 .img-darken{
 	transition: 1s;
-	filter:brightness(10%);
+	filter:brightness(40%);
 }
+
+
+.card{
+	width: 90%;
+  height: 500px;
+  margin-left: 3em;
+}
+
+.card_content{
+	text-align: center;
+	position: relative;
+	transition: transform 3s;
+  height: 500px;
+  background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	transform-style: preserve-3d;
+}
+
+.card:hover .card_content{
+	transform: rotateY(.5turn);
+}
+.card_front, .card_back{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 2em;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+}
+.card_front{
+	text-align: center;
+	transform-style: preserve-3d;
+
+
+  height: 500px;
+	width: 90%;
+  margin: auto;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+  position: relative;
+}
+.logo{
+  transform: translateZ(4rem);
+}
+.card_body{
+	transform: translateZ(3rem);
+}
+.card_back{
+	transform: rotateY(0.5turn);
+	background: lightgreen;
+  padding: 20px 40px;
+  font-size: 1.5em;
+}
+
+
+
+
+
+
+
 
 /*ABOUT*/
 .title a{
