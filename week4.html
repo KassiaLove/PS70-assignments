@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Sonsie+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kristi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      .content{
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      /*SCROLLBAR*/
+      ::-webkit-scrollbar{
+      	width: 7px;
+      }
+      ::-webkit-scrollbar-track{
+      	border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb{
+      	background: linear-gradient(125deg,#fff,#000);
+      	border-radius: 10px;
+      }
+      span{
+        position:absolute;
+        top: 2%;
+        left: 2%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+      .title{
+        width: 100%;
+        text-align: center;
+        height: 200px;
+      }
+      .title h1,.title h2{
+        font-family: 'Kristi', cursive;
+        margin: 0;
+        font-weight: 300;
+      }
+      .title h1{
+        font-size: 10em;
+        top: 0;
+        transform: translateY(-20%);
+      }
+      .title h2{
+        font-size: 8em;
+        top: 0;
+        transform: translateY(-110%);
+      }
+      .title a{
+        text-decoration: none;
+        color: #000;
+        position:absolute;
+        top: 10%;
+        left: 10%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+
+      .title a::after{
+      	content: '';
+      	display: block;
+      	width: 0;
+      	height: 2px;
+      	background: #000;
+      	transition: width .3s;
+      }
+      .title a:hover::after{
+      	width: 100%;
+      	transition: width 0.3s;
+      }/**************************************************************************/
+
+      .sticky-two-column{
+        display: grid;
+        grid-template-columns: 1fr 1fr; /*make 2 columns*/
+        width: 100%;
+      }
+      .sticky-right, .sticky-left{
+        padding: 1.25em;
+        padding-top: 0;
+        margin-top: 0;
+        font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      img.sticky{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 5%;
+        width: 90%;
+      }
+      .tab{
+        text-indent:40px;
+      }
+      .img-in-middle{
+        width: 600px;
+        text-align: center;
+        margin-left: 30%;
+        font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+    </style>
+    <title>Week 4</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+
+        <div class="title">
+          <span>PS70: Digital Fabrication</span>
+         <h1>Kassia</h1><br><br>
+         <h2>Love</h2>
+         <a href="index.html">Home</a>
+        </div>
+
+
+      </div>
+      <div class="content">
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week4/week4-3.gif">
+      </div>
+      <div class="sticky-right">
+        <h1>Week 4: Microcontroller Progamming</h1>
+    <p class="tab">
+    This week's assignment is to code an Arduino to do something. I was interested to see what I can do with LEDs's so here we go.
+
+So first I learned how to use RGB LEDs. I was interested in the fact that you can have multiple colors with just one LED bulb. I watched this Youtube video to get started: <a href="https://www.youtube.com/watch?v=IPOHARgRLE0" style ="text-decoration: none; color: #0000EE;">https://www.youtube.com/watch?v=IPOHARgRLE0</a>. This video taught me the basics of the RGB LED, how to put it on the breadboard, and how to go about coding it in Arduino. The one thing that was wrong with this video though, was that its breadboard diagram was wrong so it got me stuck for some time. It had the orientation of the resistors wrong so when I uploaded the code, the LED only was showing the color red. But after playing around with the setup and doing some looking around on the internet, I found the way to put the resistors on correctly so that it shows all 3 colors. After this, I got to thinking of how to expand this into a project for this week's assignment.
+  </p>
+  <p class="tab">
+    Materials used:
+    <ul>
+      <li>
+        Breadboard
+      </li>
+      <li>
+        Wires
+      </li>
+      <li>
+        ItsyBitsy
+      </li>
+      <li>
+        RGB Led
+      </li>
+      <li>
+        100 k&Omega; Resistors
+      </li>
+      <li>
+        Wires
+      </li>
+    </ul>
+  </p>
+
+    </div>
+    </div>
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <p class="tab">
+    Next, I learned how to make a sequence of LEDs turn on and off in a sequence using this video: <a href="https://www.youtube.com/watch?v=e1FVSpkw6q4" style ="text-decoration: none; color: #0000EE;">https://www.youtube.com/watch?v=e1FVSpkw6q4</a>. At first, it didn't seem that it was working, but then realized that I was using too strong of a resistor. I was using the 100 k&Omega resistors when it seems that the regular LED only needs 1k&Omega to be visible. So after that, I got a cool light-up sequence of LEDs.
+  </p>
+  <h3>Code: </h3>
+    <pre><code class="language-arduino">
+int LED1 = 13;
+int LED2 = 12;
+int LED3 = 11;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
+  pinMode(LED3, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(LED1, HIGH); //turn on LED1
+  digitalWrite(LED2, HIGH); //turn on LED2
+  digitalWrite(LED3, HIGH); //turn on LED3
+  delay(1000);               //wait for 1000ms
+  digitalWrite(LED1, LOW); //turn off LED1
+  delay(300);               //wait for 300ms
+  digitalWrite(LED2, LOW); //turn off LED2
+  delay(300);               //wait for 300ms
+  digitalWrite(LED3, LOW); //turn off LED3
+  delay(300);               //wait 300ms before running again
+}
+</code></pre>
+    </div>
+      <div class="sticky-right">
+    <img class="sticky" src="images/week4/week4-2.gif">
+      </div>
+    </div>
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week4/week4-4.gif">
+      </div>
+      <div class="sticky-right">
+    <p class="tab">
+    After this, I started to experiment with putting multiple RGB LEDs on a breadboard and realized that I can use the same pins on the Itsy Bitsy to make a parallel circuit. So to add more colors that are shown by the RGB LEDs I looked up a couple more color's RGB values and added them to the code to get the whole rainbow.
+  </p>
+  <h3>Code: </h3>
+    <pre><code class="language-arduino">
+int redPin = 13;
+int greenPin = 12;
+int bluePin = 11;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  setColor(255,0,0); //Red Color
+  delay(1000);
+  setColor(255,40,0); //Orange
+  delay(1000);
+  setColor(200,130,0); //Yellow
+  delay(1000);
+  setColor(0,255,0);//Green Color
+  delay(1000);
+  setColor(0,0,255);//Blue Color
+  delay(1000);
+  setColor(20,0,130); //Indigo
+  delay(1000);
+  setColor(170,0,255);//Purple Color
+  delay(1000);
+
+}
+void setColor(int redValue,int greenValue, int blueValue){
+  analogWrite(redPin, redValue);
+  analogWrite(greenPin, greenValue);
+  analogWrite(bluePin, blueValue);
+}
+      }
+</code></pre>
+    </div>
+    </div>
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <p class="tab">
+    To end it all off, I decided to add more RGB LEDs to make a total of 6 and made the color change sequence more fluid. This way it is on its way to being on of those cool color changing lamps. I will probably finish this project next week when we learn about 3D printing so I can 3D print an enclosure for these LEDs.
+    </p>
+    <h3>Code: </h3>
+      <pre><code class="language-arduino">
+
+int RED = 13;
+int GREEN = 12;
+int BLUE = 11;
+int delayTime = 20;
+
+void setup() {
+
+  pinMode(GREEN, OUTPUT);
+  pinMode(BLUE, OUTPUT);
+  pinMode(RED, OUTPUT);
+  digitalWrite(GREEN, HIGH);
+  digitalWrite(BLUE, HIGH);
+  digitalWrite(RED, HIGH);
+}
+
+int redVal;
+int blueVal;
+int greenVal;
+
+void loop() {
+
+  int redVal = 255;
+  int blueVal = 0;
+  int greenVal = 0;
+  for( int i = 0 ; i < 255 ; i += 1 ){
+    greenVal += 1;
+    redVal -= 1;
+    analogWrite( GREEN, greenVal );
+    analogWrite( RED, redVal );
+
+    delay( delayTime );
+  }
+
+  redVal = 0;
+  blueVal = 0;
+  greenVal = 255;
+  for( int i = 0 ; i < 255 ; i += 1 ){
+    blueVal += 1;
+    greenVal -= 1;
+    analogWrite( BLUE, blueVal );
+    analogWrite( GREEN, greenVal );
+
+    delay( delayTime );
+  }
+
+    redVal = 0;
+    blueVal = 255;
+    greenVal = 0;
+    for( int i = 0 ; i < 255 ; i += 1 ){
+    redVal += 1;
+    blueVal -= 1;
+    analogWrite( RED, redVal );
+    analogWrite( BLUE, blueVal );
+
+    delay( delayTime );
+  }
+}
+  </code></pre>
+    </div>
+
+      <div class="sticky-right">
+    <img class="sticky" src="images/week4/week4-5.gif">
+      </div>
+        </div>
+
+
+
+    </div>
+    </div> <!-- Closes Container -->
+  </body>
+</html>
