@@ -7,10 +7,6 @@
     <link href="https://fonts.googleapis.com/css?family=Kristi&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
     <style>
       .content{
         font-family: 'Nanum Gothic', sans-serif;
@@ -166,7 +162,7 @@ So first I learned how to use RGB LEDs. I was interested in the fact that you ca
     Next, I learned how to make a sequence of LEDs turn on and off in a sequence using this video: <a href="https://www.youtube.com/watch?v=e1FVSpkw6q4" style ="text-decoration: none; color: #0000EE;">https://www.youtube.com/watch?v=e1FVSpkw6q4</a>. At first, it didn't seem that it was working, but then realized that I was using too strong of a resistor. I was using the 100 k&Omega resistors when it seems that the regular LED only needs 1k&Omega to be visible. So after that, I got a cool light-up sequence of LEDs.
   </p>
   <h3>Code: </h3>
-    <pre><code class="language-arduino">
+    <pre><code>
 int LED1 = 13;
 int LED2 = 12;
 int LED3 = 11;
