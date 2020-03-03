@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Sonsie+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kristi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+      .content{
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      /*SCROLLBAR*/
+      ::-webkit-scrollbar{
+      	width: 7px;
+      }
+      ::-webkit-scrollbar-track{
+      	border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb{
+      	background: linear-gradient(125deg,#fff,#000);
+      	border-radius: 10px;
+      }
+      span{
+        position:absolute;
+        top: 2%;
+        left: 2%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+      .title{
+        width: 100%;
+        text-align: center;
+        height: 200px;
+      }
+      .title h1,.title h2{
+        font-family: 'Kristi', cursive;
+        margin: 0;
+        font-weight: 300;
+      }
+      .title h1{
+        font-size: 10em;
+        top: 0;
+        transform: translateY(-20%);
+      }
+      .title h2{
+        font-size: 8em;
+        top: 0;
+        transform: translateY(-110%);
+      }
+      .title a{
+        text-decoration: none;
+        color: #000;
+        position:absolute;
+        top: 10%;
+        left: 10%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+
+      .title a::after{
+      	content: '';
+      	display: block;
+      	width: 0;
+      	height: 2px;
+      	background: #000;
+      	transition: width .3s;
+      }
+      .title a:hover::after{
+      	width: 100%;
+      	transition: width 0.3s;
+      }/**************************************************************************/
+
+      .sticky-two-column{
+        display: grid;
+        grid-template-columns: 1fr 1fr; /*make 2 columns*/
+        width: 100%;
+      }
+      .sticky-right, .sticky-left{
+        padding: 1.25em;
+        padding-top: 0;
+        margin-top: 0;
+        font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      img.sticky{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 5%;
+        width: 90%;
+      }
+      .tab{
+        text-indent:40px;
+      }
+      .img-in-middle{
+        width: 600px;
+        text-align: center;
+        margin-left: 30%;
+        font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+    </style>
+    <title>Week 5</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+
+        <div class="title">
+          <span>PS70: Digital Fabrication</span>
+         <h1>Kassia</h1><br><br>
+         <h2>Love</h2>
+         <a href="index.html">Home</a>
+        </div>
+
+
+      </div>
+      <div class="content">
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week5/week5-1.jpg">
+      </div>
+      <div class="sticky-right">
+        <h1>Week 5: 3D Design and Printing</h1>
+    <p class="tab">
+    This week's assignment is design something in Fusion 360 and print it; and then scan something in 3D.
+
+So first I did the scanning part of the assignment. I decided to scan a Guanshiyin statue that I have. This is a Buddhist statue of the Goddess of Mercy. The program used to scan is the program Sense.  So when going to scan, it is all about keep the object still but also having a steady hand when going around it to scan it. Unfortunately, the statue is probably too reflective and the scanner wasn't doing so well with the reflective light. It wouldn't pick the reflective parts as part of the statue so there would be holes, and also there were parts that were randomly being made that weren't part of the statue at all.
+  </p>
+
+    </div>
+    </div>
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week5/week5-2.jpg">
+    <p style="margin-left: 35%;">First try</p>
+      </div>
+      <div class="sticky-right">
+        <img class="sticky" src="images/week5/week5-3.jpg">
+        <p style="margin-left: 40%;">Second try</p>
+    </div>
+    </div>
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week5/week5-6.png">
+      </div>
+      <div class="sticky-right">
+        <h1>3D Modeling and Printing</h3>
+    <p class="tab">
+  For the 3D printing thing this week, I didn't do anything too fancy. To gpt use to the 3D printers in the lab, I followed the maker's coin tutorial provided: <a style ="text-decoration: none; color: #0000EE;" href="https://www.youtube.com/watch?v=tGtNLpYSXOU">https://www.youtube.com/watch?v=tGtNLpYSXOU</a>. When starting out with the 3D printing, the major problem I was running into was the PLA not sticking to the hot plate. I Googled around and found out that maybe the build plate just needs to be cleaned again with isoproply. Trying this, and learning how to unload and load the filaments eventually worked to have the print work. One reason why is was having a lack of adhesion was that something would come out of the nozzle wrong and would leave an uneven layer so when the nozzle came back around to lay down another layer, it would get caught on the part that is uneven and the pull it off of the build plate. The second reason was that there was probably a build up of oil on the build plate to cleaning it with isoproply did the trick.
+  </p>
+  <p class="tab">
+    The basic mechanism for make the maker coin in Fusion 360 was drawing a base circle, then make the teeth out of 2 circles, and placing a letter on the front of the coin. One coin by itself took like 20 mins to print.
+  </p>
+
+    </div>
+    </div>
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <p class="tab">
+    Next I wanted to make something that can be used for practical use. So I decided to make a small pencil/pen holder. What makes it cool is that it is a hexagon shape that swirls from the bottom up. Through making this I learned about the offset plane, loft, and shell settings. For the offset plane setting, you can make a plane a x distance away from an object. For loft, it will connect the points of 2 shapes. And for shell, it will hollow your item to your liking. These settings made it really easy to making this pencil/pen holder, and I can easily make more in the future.
+    </p>
+    <p class="tab">
+      <u>Pros</u> of 3D printing:
+      <ul>
+        <li>Can make more complex models that you can not laser cut or use shop tools to make</li>
+        <li>Doesn't have to be flat, as it sorta has to be for laser cutting</li>
+        <li>Many different types of 3d printing</li>
+        <li>Variety of materials</li>
+      </ul>
+    </p>
+    <p class="tab">
+      <u>Cons</u> of 3D printing:
+      <ul>
+        <li>Takes time to print</li>
+        <li>If things aren't set up correct, the print will fail</li>
+        <li>Not really eco-friendly</li>
+      </ul>
+    </p>
+
+    </div>
+
+      <div class="sticky-right">
+    <img class="sticky" src="images/week5/week5-7.jpg">
+      </div>
+        </div>
+
+
+
+    </div>
+    </div> <!-- Closes Container -->
+  </body>
+</html>
