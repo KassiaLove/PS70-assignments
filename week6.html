@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Sonsie+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kristi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+      .content{
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      /*SCROLLBAR*/
+      ::-webkit-scrollbar{
+      	width: 7px;
+      }
+      ::-webkit-scrollbar-track{
+      	border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb{
+      	background: linear-gradient(125deg,#fff,#000);
+      	border-radius: 10px;
+      }
+      span{
+        position:absolute;
+        top: 2%;
+        left: 2%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+      .title{
+        width: 100%;
+        text-align: center;
+        height: 200px;
+      }
+      .title h1,.title h2{
+        font-family: 'Kristi', cursive;
+        margin: 0;
+        font-weight: 300;
+      }
+      .title h1{
+        font-size: 10em;
+        top: 0;
+        transform: translateY(-20%);
+      }
+      .title h2{
+        font-size: 8em;
+        top: 0;
+        transform: translateY(-110%);
+      }
+      .title a{
+        text-decoration: none;
+        color: #000;
+        position:absolute;
+        top: 10%;
+        left: 10%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+
+      .title a::after{
+      	content: '';
+      	display: block;
+      	width: 0;
+      	height: 2px;
+      	background: #000;
+      	transition: width .3s;
+      }
+      .title a:hover::after{
+      	width: 100%;
+      	transition: width 0.3s;
+      }/**************************************************************************/
+
+      .sticky-two-column{
+        display: grid;
+        grid-template-columns: 1fr 1fr; /*make 2 columns*/
+        width: 100%;
+      }
+      .sticky-right, .sticky-left{
+        padding: 1.25em;
+        padding-top: 0;
+        margin-top: 0;
+        font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      img.sticky{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 5%;
+        width: 90%;
+      }
+      .tab{
+        text-indent:40px;
+      }
+      .img-in-middle{
+        width: 600px;
+        text-align: center;
+        margin-left: 30%;
+        font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+    </style>
+    <title>Week 6</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+
+        <div class="title">
+          <span>PS70: Digital Fabrication</span>
+         <h1>Kassia</h1><br><br>
+         <h2>Love</h2>
+         <a href="index.html">Home</a>
+        </div>
+
+
+      </div>
+      <div class="content">
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week6/week6-1.jpg">
+      </div>
+      <div class="sticky-right">
+        <h1>Week 6: Electronic Input Devices</h1>
+    <p class="tab">
+    This week's assignment was to make a capacitive sensor and some other sensor(i.e. temperature, sound).
+
+I first decided to do the latter part of the assignment and started playing around with a phototransitor. I explored a way to get the colors of a RGB LED to change colors in response to the amount of light being transmitted to the phototransitor. <br>
+
+Materials needed are:
+
+<ul>
+  <li>RGB LED</li>
+  <li>Breadboard</li>
+  <li>Phototransitor</li>
+  <li>3 100 k&Omega; Resistors</li>
+  <li>1 220 k&Omega; Resistor</li>
+  <li>Wires</li>
+</ul>
+  </p>
+
+  <p>
+    For the code, first you start off setting up the phototransitor so that it can take values from the environment.
+    And then you go into the serial monitor to take some readings. Based off of these readings, you can create threshold
+    values for the different legs of the RGB LED and when you want each one to be activated. These are in the form of if/else
+    statements because you want to check is the value that the phototransitor is reading is lower or higher than a certain threshold, and
+    then output a desired response.
+  </p>
+</div>
+</div>
+
+<div class="sticky-two-column">
+
+  <div class="sticky-right">
+
+    <h3>Code: </h3>
+    (*Take out the parenthesis before the < & > signs; put these there to make Atom display the code correctly*)
+    <pre><code>
+int lightPin = A0;  //pin for Photoresistor
+int TranslateAnalog = 0;
+
+#define GREEN 9
+#define BLUE 10
+#define RED 7
+
+int redVal;
+int blueVal;
+int greenVal;
+
+void setup()
+{
+    Serial.begin(9600);  //Start serial communication
+    pinMode(GREEN, OUTPUT);
+    pinMode(BLUE, OUTPUT);
+    pinMode(RED, OUTPUT);
+  }
+
+void loop()
+{
+    Serial.println(analogRead(lightPin)); <br>//Write the value of the photoresistor to the serial monitor.
+    TranslateAnalog = analogRead(lightPin); <br>//Read the Photoresistor value
+    //If Photoresistor Value is above 355 it will disable LED
+    if(TranslateAnalog(<) 50) {
+      redVal = 255;
+      greenVal = 0;
+      blueVal = 0;
+      analogWrite( RED, redVal );
+      analogWrite( GREEN, greenVal );
+      analogWrite( BLUE, blueVal );
+    }
+    //If Photoreistor Value is below 355 it will turn LED ON
+    else if(TranslateAnalog>50 && TranslateAnalog (<)100) {
+      redVal = 200;
+      greenVal = 130;
+      blueVal = 0;
+      analogWrite( RED, redVal );
+      analogWrite( GREEN, greenVal );
+      analogWrite( BLUE, blueVal );
+    }
+    </code></pre>
+    </div>
+    <div class="sticky-left">
+  <img class="sticky" src="images/week6/week6-2.gif">
+    </div>
+
+    </div>
+
+
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week6/week6-4.gif">
+      </div>
+      <div class="sticky-right">
+        <h1>Capacitive Sensor</h1>
+    <p class="tab">
+  Next I worked on my capacitive sensor. For this, I kept the theme of color changing and changing the values of that go to the legs of the RGB LED based on an input.
+  I kept having problems with the Capacitive library, so I used Rob's example of sensing with step response. It essentially took readings from a positive and negative end pieces of copper, took the difference, and based on this difference you could do different things and give a variety of outputs.
+  It basically has the same set up as the phototransitor, but this time there are 2 copper sheets connected to their respective pins to give serial input. By looking at the serial plotter and serial port, and also based on how I wanted the colors to change, I chose certain thresholds for each leg of the RGB LED.
+  <br><br>At first, the numbers are very large and there is not very nice control. But after adding the 1M&Omega; resistors, the numbers were much more contolable and easier to make thresholds out of. It made the signal more steady.
+  <br><br>Materials needed are:
+
+  <ul>
+    <li>2 RGB LED</li>
+    <li>Breadboard</li>
+    <li>Itsy Bitsy</li>
+    <li>2 copper sheets</li>
+    <li>6 100 k&Omega; Resistors</li>
+    <li>2 1 M&Omega; Resistors</li>
+    <li>Wires</li>
+  </ul>
+  </p>
+
+
+    </div>
+    </div>
+
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <p class="tab">
+    For the code, I started off with Rob's example code. This helped me familiarize myself with what was going on and how the differences between the two readings of the copper sheets were generating a signal.
+    <br><br> After this, I added if/else statements for thresholds and gave values to the different legs of the RGB LED.
+    <br><br> So based of various distances that the copper "sees" your hand or when you are touching it, it gives a certain number to the RGB LED and this outputs a certain color.
+    </p>
+    <h3>Code: </h3>
+    (*Take out the parenthesis before the < & > signs; put these there to make Atom display the code correctly*)
+    (*Base code used from rx_tx01 example from Robert Hart Mar 2019*)
+    <pre><code>
+      int read_high;
+      int read_low;
+      int diff;
+      int RED = 7;
+      int GREEN = 9;
+      int BLUE = 10;
+
+
+      void setup() {
+      pinMode(12,OUTPUT);
+      Serial.begin(9600);
+
+      pinMode(GREEN, OUTPUT);
+        pinMode(BLUE, OUTPUT);
+        pinMode(RED, OUTPUT);
+        digitalWrite(GREEN, LOW);
+        digitalWrite(BLUE, LOW);
+        digitalWrite(RED, LOW);
+      }
+
+      int redVal;
+      int blueVal;
+      int greenVal;
+
+      void loop() {
+
+
+         digitalWrite(12,HIGH);           <br>   //Step the voltage high on conductor 1.
+         read_high = analogRead(A0);      <br>  //Measure response of conductor 2.
+         delayMicroseconds(100);           <br> //Delay to reach steady state.
+         digitalWrite(12,LOW);              <br> //Step the voltage to zero on conductor 1.
+         read_low = analogRead(A0);       <br>  //Measure response of conductor 2.
+         diff = read_high - read_low;    <br>   //desired answer is the difference between high and low.
+
+      Serial.println(diff);
+      if(diff > 50){
+          redVal = 255;
+          blueVal = 0;
+          greenVal = 0;
+          digitalWrite(RED, HIGH);
+          analogWrite( RED, redVal );
+          analogWrite( BLUE, blueVal );
+          analogWrite( GREEN, greenVal );
+          }
+          else if(diff (<) 25){
+          redVal = 0;
+          blueVal = 255;
+          greenVal = 0;
+          digitalWrite(BLUE, HIGH);
+          analogWrite( RED, redVal );
+          analogWrite( BLUE, blueVal );
+          analogWrite( GREEN, greenVal );
+          }
+          else{
+            redVal = 0;
+          blueVal = 0;
+          greenVal = 255;
+          digitalWrite(GREEN, HIGH);
+          analogWrite( RED, redVal );
+          analogWrite( BLUE, blueVal );
+          analogWrite( GREEN, greenVal );
+            }
+      //delay(5000);
+      }
+    </code></pre>
+    </div>
+
+      <div class="sticky-right">
+    <img class="sticky" src="images/week6/week6-3.png">
+      </div>
+        </div>
+
+
+
+    </div>
+    </div> <!-- Closes Container -->
+  </body>
+</html>
