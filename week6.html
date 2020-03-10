@@ -127,7 +127,7 @@
     <p class="tab">
     This week's assignment was to make a capacitive sensor and some other sensor(i.e. temperature, sound).
 
-I first decided to do the latter part of the assignment and started playing around with a phototransitor. I explored a way to get the colors of a RGB LED to change colors in response to the amount of light being transmitted to the phototransitor. <br>
+I first decided to do the latter part of the assignment and started playing around with a phototransistor. I explored a way to get the colors of an RGB LED to change colors in response to the amount of light being transmitted to the phototransistor. <br>
 
 Materials needed are:
 
@@ -142,10 +142,10 @@ Materials needed are:
   </p>
 
   <p>
-    For the code, first you start off setting up the phototransitor so that it can take values from the environment.
-    And then you go into the serial monitor to take some readings. Based off of these readings, you can create threshold
+    For the code, first you start off setting up the phototransistor so that it can take values from the environment.
+    And then you go into the serial monitor to take some readings. Based on these readings, you can create threshold
     values for the different legs of the RGB LED and when you want each one to be activated. These are in the form of if/else
-    statements because you want to check is the value that the phototransitor is reading is lower or higher than a certain threshold, and
+    statements because you want to check is the value that the phototransistor is reading is lower or higher than a certain threshold, and
     then output a desired response.
   </p>
 </div>
@@ -218,8 +218,8 @@ void loop()
     <p class="tab">
   Next I worked on my capacitive sensor. For this, I kept the theme of color changing and changing the values of that go to the legs of the RGB LED based on an input.
   I kept having problems with the Capacitive library, so I used Rob's example of sensing with step response. It essentially took readings from a positive and negative end pieces of copper, took the difference, and based on this difference you could do different things and give a variety of outputs.
-  It basically has the same set up as the phototransitor, but this time there are 2 copper sheets connected to their respective pins to give serial input. By looking at the serial plotter and serial port, and also based on how I wanted the colors to change, I chose certain thresholds for each leg of the RGB LED.
-  <br><br>At first, the numbers are very large and there is not very nice control. But after adding the 1M&Omega; resistors, the numbers were much more contolable and easier to make thresholds out of. It made the signal more steady.
+  It basically has the same set up as the phototransistor, but this time there are 2 copper sheets connected to their respective pins to give serial input. By looking at the serial plotter and serial port, and also based on how I wanted the colors to change, I chose certain thresholds for each leg of the RGB LED.
+  <br><br>At first, the numbers are very large and there is not very nice control. But after adding the 1M&Omega; resistors, the numbers were much more controllable and easier to make thresholds out of. It made the signal more steady.
   <br><br>Materials needed are:
 
   <ul>
