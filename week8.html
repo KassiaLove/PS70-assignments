@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Sonsie+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kristi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+      .content{
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      /*SCROLLBAR*/
+      ::-webkit-scrollbar{
+      	width: 7px;
+      }
+      ::-webkit-scrollbar-track{
+      	border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb{
+      	background: linear-gradient(125deg,#fff,#000);
+      	border-radius: 10px;
+      }
+      span{
+        position:absolute;
+        top: 2%;
+        left: 2%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+      .title{
+        width: 100%;
+        text-align: center;
+        height: 200px;
+      }
+      .title h1,.title h2{
+        font-family: 'Kristi', cursive;
+        margin: 0;
+        font-weight: 300;
+      }
+      .title h1{
+        font-size: 10em;
+        top: 0;
+        transform: translateY(-20%);
+      }
+      .title h2{
+        font-size: 8em;
+        top: 0;
+        transform: translateY(-110%);
+      }
+      .title a{
+        text-decoration: none;
+        color: #000;
+        position:absolute;
+        top: 10%;
+        left: 10%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+
+      .title a::after{
+      	content: '';
+      	display: block;
+      	width: 0;
+      	height: 2px;
+      	background: #000;
+      	transition: width .3s;
+      }
+      .title a:hover::after{
+      	width: 100%;
+      	transition: width 0.3s;
+      }/**************************************************************************/
+
+      .sticky-two-column{
+        display: grid;
+        grid-template-columns: 1fr 1fr; /*make 2 columns*/
+        width: 100%;
+      }
+      .sticky-right, .sticky-left{
+        padding: 1.25em;
+        padding-top: 0;
+        margin-top: 0;
+        font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      img.sticky{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 5%;
+        width: 90%;
+      }
+      .tab{
+        text-indent:40px;
+      }
+      .img-in-middle{
+        width: 600px;
+        text-align: center;
+        margin-left: 30%;
+        font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      .codeButton{
+        font-family: 'Nanum Gothic', sans-serif;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.0em;
+  font-weight: 600;
+  cursor: pointer;
+      }
+      .codeButton::after{
+      	content: '';
+      	display: block;
+      	width: 0;
+      	height: 2px;
+      	background: #000;
+      	transition: width .3s;
+      }
+      .codeButton:hover::after{
+      	width: 100%;
+      	transition: width 0.3s;
+      }/
+
+    </style>
+    <title>Week 8</title>
+    <script type="text/javascript">
+      function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function myFunction2() {
+var x = document.getElementById("myDIV2");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction3() {
+var x = document.getElementById("myDIV3");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction4() {
+var x = document.getElementById("myDIV4");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction5() {
+var x = document.getElementById("myDIV5");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction6() {
+var x = document.getElementById("myDIV6");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction7() {
+var x = document.getElementById("myDIV7");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+
+        <div class="title">
+          <span>PS70: Digital Fabrication</span>
+         <h1>Kassia</h1><br><br>
+         <h2>Love</h2>
+         <a href="index.html">Home</a>
+        </div>
+
+
+      </div>
+      <div class="content">
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week8/week8-1.jpg">
+      </div>
+      <div class="sticky-right">
+        <h1>Week 8: Electronic Output Devices</h1>
+    <p class="tab">
+    This week's assignment was to choose an output device and program a microcontroller to operate it.<br>
+
+First I played around with some of the output devices: servo motor, dc motor, LED, and buzzer. Then afterwards I made a little music box type thing, where if you press a button, a song would play with a color sequence to go with it.
+
+</p>
+</div>
+</div>
+
+<div class="sticky-two-column">
+
+  <div class="sticky-right">
+ <h1>Servo Motor</h1>
+  <p>
+    First off I started with the servo tutorial provided on the class website. First I learned how to build and code a basic servo layout. And then I used a potentiometer to control the servo. <br>
+
+    For the basic servo layout, it is just plugging power and ground into the servo and plugging in one of the digital pins to control the movement. For Arduino coding the servo, you have to include the Arduino Servo library.
+
+    <br><br>Materials needed are:
+
+    <ul>
+      <li>Servo Motor</li>
+      <li>ItsyBitsy</li>
+      <li>Breadboard</li>
+      <li>Wires</li>
+    </ul>
+</p>
+
+
+<a class ="codeButton" onclick="myFunction()">Click Here for Code to the basic servo layout</a>
+
+<div id="myDIV" style="display: none;">
+  <pre><code>
+  Code from class
+  #include Servo.h //put with  <> around the servo.h
+  Servo myservo;
+  void setup() {
+    myservo.attach(9);
+  }
+  void loop() {
+    myservo.write(90);
+  } </code></pre>
+</div>
+<br><br>
+<a class ="codeButton" onclick="myFunction2()">Click Here for Code to the servo with potentiometer</a>
+
+<div id="myDIV2" style="display: none;">
+  <pre><code>
+  Code from class
+  #include Servo.h //put with  <> around the servo.h
+  Servo myservo;
+  int pos = 0;
+
+  void setup() {
+  myservo.attach(9);
+}
+
+void loop() {
+  for (pos = 0; pos <= 180; pos += 1) {
+    myservo.write(pos);
+    delay(15);
+  }
+  myservo.write(0);
+  delay(1000);
+}
+  } </code></pre>
+</div>
+
+
+    </div>
+    <div class="sticky-left">
+  <img class="sticky" src="images/week8/week8-2.png">
+    </div>
+
+    </div>
+
+
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week8/week8-4.jpg">
+      </div>
+      <div class="sticky-right">
+        <h1>DC Motor</h1>
+    <p class="tab">
+
+      Next I did the motor tutorial that was provided on the class website. I did the motor setup with a FET (Field Effect Transistor). <br>
+
+      For the basic motor layout, it is just plugging in a 9V power supply into power and ground on the breadboard; connect diode right after that to go to the drain leg of the FET. After the power side of the diode, you add the positive end of the motor. In line with the drain leg fo the FET and negative end of the diode you add the negative end of the motor. You attach the gate leg of the FET to a digital pin. And then you add the source leg of the FET to ground and you add the itsy bitsy to ground. <br>
+
+      There is not a special library needed for the code.
+
+  <br><br>Materials needed are:
+
+  <ul>
+    <li>DC Motor</li>
+    <li>Breadboard</li>
+    <li>Itsy Bitsy</li>
+    <li>9V Power Supply</li>
+    <li>FET, in this case a IRLD024, that can conduct up to 2.5 Amps</li>
+    <li>Wires</li>
+  </ul>
+  </p>
+
+  <a class ="codeButton" onclick="myFunction3()">Click Here for Code to the DC Motor</a>
+
+  <div id="myDIV3" style="display: none;">
+    <pre><code>
+    Code from class
+
+    void setup() {
+      pinMode(7, OUTPUT);
+    }
+
+    void loop() {
+     digitalWrite(7, HIGH);
+     delay(500);
+     digitalWrite(7, LOW);
+     delay(500);
+    }
+</code></pre>
+  </div>
+
+    </div>
+    </div>
+
+    <div class="img-in-middle">
+    <img class="sticky" style ="height: 500px;" src="images/week8/week8-3.gif">
+    </div>
+
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+        <h1>A little music player</h1>
+    <p class="tab">
+      For this week's weekly project, I combined using a buzzer and a RGB LED. First off, I had to learn how to use a buzzer. It was relatively simple to set up and code. It was just a little annoying to have it start screaming like a fire alarm whenever I plugged it into my computer. So, I decided to add a button to the circuit to give me control of when the buzzer is supposed to go off. <br>
+</p>
+<p class="tab">
+      For the basic buzzer setup with just the buzzer, it was just plugging the negative end of the buzzer into ground, plugging the positive end into a digital pin. <br>
+</p>
+<p class="tab">
+      To add a button, you had to add it before the buzzer. The button has to get a certain input (such as closing) to then tell the buzzer to play. So for this you add power straight to the button and add the negative side of the button to a digital pin and also run it to ground with a resistor. Then add the buzzer after that; to a different digital pin and to ground. <br>
+</p>
+<p class="tab">
+      To get the buzzer to play certain notes, you have to code certain frequencies into the tone function in Arduino. To get desired note frequencies I looked up a <a href= "https://pages.mtu.edu/~suits/notefreqs.html" style="color: #0000EE; text-decoration: none;">table on the internet</a> and enter in some notes and played around with note length. To get a desired note length, you change the values of the delay inbetween each note and change the duration of the frequency (within the tone code) accordingly. After this I decided to code the Jupiter, the Bringer of Jollity's main theme by Gustav Holst. Why I chose this piece was because Jupiter is my favorite planet and Jupiter is one of my favorite pieces in The Planets Suite. To get the notes and durations, I looked up some sheet music and entered note frequencies and did some transposing. So, first I started off with 4 bars from the piece shown to the right. <br>
+</p>
+<a class ="codeButton" onclick="myFunction4()">Click Here for first 4 bars</a>
+
+<div id="myDIV4" style="display: none;">
+  <pre><code>
+    int buzzer = 13;
+
+    int BUTTON = 2;
+    int lb = 246;
+    int c = 261;
+    int d = 294;
+    int e = 329;
+    int fs = 369;
+    int g = 392;
+    int a = 440;
+    int b = 494;
+    int C = 525;
+    int D = 587;
+    int E = 659;
+    int FS = 739;
+    int G = 783;
+    int A = 880;
+    int B = 988;
+
+    int eight = 300;
+    int quar = 600;
+    int half = 1200;
+    void setup(){
+
+    pinMode(buzzer,OUTPUT);
+
+    pinMode(BUTTON,INPUT);
+
+    }
+
+    void loop(){
+
+    if(digitalRead(BUTTON) == HIGH){
+
+      tone(buzzer, lb, 500);
+      delay(eight);
+      tone(buzzer, d, 500);
+      delay(eight);
+      tone(buzzer, e, 500);
+      delay(quar);
+      tone(buzzer, e, 500);
+      delay(eight);
+      tone(buzzer, g, 500);
+      delay(eight);
+      tone(buzzer, fs, 500);
+      delay(450);
+      tone(buzzer, d, 500);
+      delay(150);
+      tone(buzzer, g, 500);
+      delay(eight);
+      tone(buzzer, a, 500);
+      delay(eight);
+      tone(buzzer, g, 500);
+      delay(quar);
+      tone(buzzer, fs, 500);
+      delay(quar);
+      tone(buzzer, e, 500);
+      delay(eight);
+      tone(buzzer, fs, 500);
+      delay(eight);
+      tone(buzzer, e, 500);
+      delay(quar);
+      tone(buzzer, d, 500);
+      delay(quar);
+      tone(buzzer, lb, 1000);
+      delay(half);
+
+    }else{
+    }
+
+    }
+</code></pre>
+</div>
+
+
+    </div>
+      <div class="sticky-right">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <video padding-top="50px" width="500" height="600" controls>
+      <source src="images/week8/week8-5.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+      </div>
+        </div>
+
+
+        <div class="sticky-two-column">
+          <div class="sticky-left">
+        <img class="sticky" src="images/week8/week8-6.png">
+          </div>
+          <div class="sticky-right">
+            <h1> Part of Jupiter, the Bringer of Jollity's main theme</h1>
+  <img class="sticky" src="images/week8/week8-7.png">
+      </div>
+        </div>
+
+
+
+        <div class="sticky-two-column">
+          <div class="sticky-left">
+            <br>
+            <br>
+            <video padding-top="50px" width="500" height="600" controls>
+          <source src="images/week8/week8-8.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+          </div>
+          <div class="sticky-right">
+            <p class="tab">
+              Next I finished the rest of the main theme of the suite. And then I optimized the code because it was starting to get a little long with the repeated tone and delay functions. I made a function named setTone with took the inputs of note, duration, and amount.
+              </p>
+              <p class="tab">For the notes, before the whole setup of the code I initialized all the notes by letters and gave them their respective frequencies. Duration was the length of the sustain which in almost every note's case was 500, unless it was a half note. And then amount corresponded to the length of the delay, which dictated what type of note it was. For the eight note, I decided to go with the value of 300.  So to get a quarter note you multiply by 2 because there are 2 eight notes in a quarter note, and then do the same (multiple by 2) to get a half note (2 quarter notes in a half note). So eight note was 300, quarter note was 600, and half note was 1200. For the sixteenth note, you divide the eight note value by 2, because there are 2 sixteenth notes in an eight note. So sixteenth note value was 150. And for dotted notes, specifically the dotted eighth, you half the original value of the note that is dotted and add that to the original value. So for dotted eight note, you half it and get 150, and then add that to the original value, so 450. A dotted eight note is 450.
+            </p>
+
+            <a class ="codeButton" onclick="myFunction5()">Click Here final Jupiter theme code (it is pretty long)</a>
+
+            <div id="myDIV5" style="display: none;">
+              <pre><code>
+int buzzer = 13;
+
+int BUTTON = 2;
+int aa = 220;
+int bb = 246;
+int c = 261;
+int d = 294;
+int e = 329;
+int f = 349;
+int fs = 369;
+int g = 392;
+int gs = 415;
+int a = 440;
+int b = 494;
+int C = 525;
+int D = 587;
+int E = 659;
+int FS = 739;
+int G = 783;
+int A = 880;
+int B = 988;
+
+
+int eight = 300;
+int quar = 600;
+int half = 1200;
+
+void setup(){
+
+pinMode(buzzer,OUTPUT);
+
+pinMode(BUTTON,INPUT);
+}
+void setTone(int note, int dur, int amt){
+tone(buzzer,note,dur);
+delay(amt);
+
+}
+
+void loop() {
+// put your main code here, to run repeatedly:
+if(digitalRead(BUTTON) == HIGH){
+delay(1000);
+setTone(bb, 500, eight);
+setTone(d, 500, eight);
+setTone(e, 500, quar);
+setTone(e, 500, eight);
+setTone(g, 500, eight);
+setTone(fs, 500, 450);
+setTone(d, 500, 150);
+setTone(g, 500, eight);
+setTone(a, 500, eight);
+setTone(g, 500, quar);
+setTone(fs, 500, quar);
+setTone(e, 500, eight);
+setTone(fs, 500, eight);
+setTone(e, 500, quar);
+setTone(d, 500, quar);
+setTone(bb, 1000, half);
+setTone(bb, 500, eight);
+setTone(d,500,eight);
+setTone(e,500,quar);
+setTone(e,500,eight);
+setTone(g,500,eight);
+setTone(fs,500,450);
+setTone(d,500,150);
+setTone(g,500,eight);
+setTone(a,500,eight);
+setTone(b,500,quar);
+setTone(b,500,quar);
+setTone(b,500,eight);
+setTone(a,500,eight);
+setTone(g,500,quar);
+setTone(a,500,quar);
+setTone(g,1000,half);
+setTone(D, 500, eight);
+setTone(b, 500, eight);
+setTone(a, 500, quar);
+setTone(a, 500, quar);
+setTone(g, 500, eight);
+setTone(b, 500, eight);
+setTone(a, 500, quar);
+setTone(d, 500, quar);
+setTone(D, 500, eight);
+setTone(b, 500, eight);
+setTone(a, 500, quar);
+setTone(a, 500, quar);
+setTone(b, 500, eight);
+setTone(D, 500, eight);
+setTone(E, 1000, half);
+setTone(E, 500, eight);
+setTone(FS, 500, eight);
+setTone(G, 500, quar);
+setTone(FS, 500, quar);
+setTone(E, 500, quar);
+setTone(D, 500, quar);
+setTone(G, 500, quar);
+setTone(b, 500, quar);
+setTone(a, 500, eight);
+setTone(g, 500, eight);
+setTone(a, 500, quar);
+setTone(b, 500, quar);
+setTone(D, 1000, half);
+setTone(b, 500, eight);
+setTone(D, 500, eight);
+setTone(E, 500, quar);
+setTone(E, 500, eight);
+setTone(G, 500, eight);
+setTone(FS, 500, 450);
+setTone(D, 500, 150);
+setTone(G, 500, eight);
+setTone(A, 500, eight);
+setTone(G, 500, quar);
+setTone(FS, 500, quar);
+setTone(E, 500, eight);
+setTone(FS, 500, eight);
+setTone(E, 500, quar);
+setTone(D, 500, quar);
+setTone(b, 1000, half);
+
+setTone(b, 500, eight);
+setTone(D, 500, eight);
+setTone(E, 500, quar);
+setTone(E, 500, eight);
+setTone(G, 500, eight);
+setTone(FS, 500, 450);
+setTone(D, 500, 150);
+setTone(G, 500, eight);
+setTone(A, 500, eight);
+setTone(B, 500, quar);
+setTone(B, 500, quar);
+setTone(B, 500, eight);
+setTone(A, 500, eight);
+setTone(G, 500, quar);
+setTone(A, 500, quar);
+setTone(G, 1000, half);
+
+   }
+
+}
+
+
+
+          </code></pre>
+            </div>
+
+
+      </div>
+        </div>
+
+        <div class="sticky-two-column">
+          <div class="sticky-left">
+            <p class="tab">
+              After that I decided that I wanted to add an RGB LED to interact with music that was being played. I wanted the colors to switch everytime a different note was played. So you set up the RGB LED on the breadboard with 3 resistors and 3 wires going from the RGB legs to 3 different digital pins, and the last leg going to ground. Now in my setTone function, I put in an if/else if/else statement to check what note is going to be played and then to use a setColor function to give values to the RGB LED depending on what note is going to be played.
+              </p>
+
+              <a class ="codeButton" onclick="myFunction6()">Click Here final setTone function code</a>
+
+              <div id="myDIV6" style="display: none;">
+                <pre><code>
+
+        void setTone(int note, int dur, int amt){
+        tone(buzzer,note,dur);
+        delay(amt);
+        if (note == aa){
+          setColor(255,0,0);
+            }
+          else if (note == bb){
+            setColor(0,0,255);
+          }
+         else if(note == c){
+            setColor(0,255,0);
+            }
+         else if(note == d){
+          setColor(255,0,0);
+          }
+         else if(note == e){
+           setColor(150,0,255);
+          }
+          else if(note == f){
+           setColor(255,0,255);
+          }
+          else if(note == fs){
+            setColor(255,0,100);
+            }
+         else if(note == g){
+          setColor(255,255,255);
+          }
+          else if(note == gs){
+          setColor(255,255,0);
+          }
+         else if(note == a){
+          setColor(255,50,0);
+          }
+         else if(note == b){
+           setColor(0,153,255);
+          }
+          else if(note == c){
+            setColor(229,204,255);
+            }
+         else if(note == D){
+          setColor(0,255,153);
+          }
+         else if(note == E){
+          setColor(200,0,230);
+          }
+        else if(note == FS){
+          setColor(255,50,50);
+          }
+        else if(note == G){
+          setColor(255,255,255);
+          }
+        else if(note == A){
+          setColor(255,0,0);
+          }
+        }
+            </code></pre>
+              </div>
+
+
+              <p class="tab">
+            </p>
+
+
+          </div>
+          <div class="sticky-right">
+            <br>
+            <br>
+            <video padding-top="50px" width="500" height="600" controls>
+          <source src="images/week8/week8-9.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+      </div>
+        </div>
+
+
+        <div class="sticky-two-column">
+          <div class="sticky-left">
+            <img class="sticky" src="images/week8/week8-10.jpg">
+          </div>
+          <div class="sticky-right">
+            <p class="tab">
+              After that I add light to the rest of the song. I also decided to add another song via another button. I added the Kylo Ren theme, because he is my favorite character in Star Wars. Using the same method as above to get the notes and I used sheet music to put down the note names and values. I added another button in parallel on the circuit board. And that is it for this week's project.
+              </p>
+
+
+            <a class ="codeButton" onclick="myFunction7()">Click Here final code (it is very long)</a>
+
+            <div id="myDIV7" style="display: none;">
+              <pre><code>
+                int buzzer = 13;
+
+                int BUTTON = 2;
+                int BUTTON2 = 3;
+                int aa = 220;
+                int bb = 246;
+                int c = 261;
+                int d = 294;
+                int e = 329;
+                int f = 349;
+                int fs = 369;
+                int g = 392;
+                int gs = 415;
+                int a = 440;
+                int b = 494;
+                int C = 525;
+                int D = 587;
+                int E = 659;
+                int FS = 739;
+                int G = 783;
+                int A = 880;
+                int B = 988;
+
+
+                int eight = 300;
+                int quar = 600;
+                int half = 1200;
+
+                int redPin = 8;
+                int greenPin = 9;
+                int bluePin = 10;
+
+                void setup(){
+
+                pinMode(buzzer,OUTPUT);
+
+                pinMode(BUTTON,INPUT);
+                pinMode(BUTTON2,INPUT);
+
+                //LED
+                  pinMode(redPin, OUTPUT);
+                  pinMode(greenPin, OUTPUT);
+                  pinMode(bluePin, OUTPUT);
+
+                }
+                void setColor(int redValue,int greenValue, int blueValue){
+                  analogWrite(redPin, redValue);
+                  analogWrite(greenPin, greenValue);
+                  analogWrite(bluePin, blueValue);
+                }
+                void setTone(int note, int dur, int amt){
+                  tone(buzzer,note,dur);
+                  delay(amt);
+                  if (note == aa){
+                    setColor(255,0,0);
+                    }
+                  else if (note == bb){
+                    setColor(0,0,255);
+                    }
+                   else if(note == c){
+                    setColor(0,255,0);
+                    }
+                   else if(note == d){
+                    setColor(255,0,0);
+                    }
+                   else if(note == e){
+                     setColor(150,0,255);
+                    }
+                    else if(note == f){
+                     setColor(255,0,255);
+                    }
+                    else if(note == fs){
+                      setColor(255,0,100);
+                      }
+                   else if(note == g){
+                    setColor(255,255,255);
+                    }
+                    else if(note == gs){
+                    setColor(255,255,0);
+                    }
+                   else if(note == a){
+                    setColor(255,50,0);
+                    }
+                   else if(note == b){
+                     setColor(0,153,255);
+                    }
+                    else if(note == c){
+                      setColor(229,204,255);
+                      }
+                   else if(note == D){
+                    setColor(0,255,153);
+                    }
+                   else if(note == E){
+                    setColor(200,0,230);
+                    }
+                    else if(note == FS){
+                    setColor(255,50,50);
+                    }
+                    else if(note == G){
+                    setColor(255,255,255);
+                    }
+                    else if(note == A){
+                    setColor(255,0,0);
+                    }
+                }
+
+                void loop() {
+                  // put your main code here, to run repeatedly:
+                  if(digitalRead(BUTTON) == HIGH){
+                  delay(1000);
+                  setTone(bb, 500, eight);
+                  setTone(d, 500, eight);
+                  setTone(e, 500, quar);
+                  setTone(e, 500, eight);
+                  setTone(g, 500, eight);
+                  setTone(fs, 500, 450);
+                  setTone(d, 500, 150);
+                  setTone(g, 500, eight);
+                  setTone(a, 500, eight);
+                  setTone(g, 500, quar);
+                  setTone(fs, 500, quar);
+                  setTone(e, 500, eight);
+                  setTone(fs, 500, eight);
+                  setTone(e, 500, quar);
+                  setTone(d, 500, quar);
+                  setTone(bb, 1000, half);
+                  setTone(bb, 500, eight);
+                  setTone(d,500,eight);
+                  setTone(e,500,quar);
+                  setTone(e,500,eight);
+                  setTone(g,500,eight);
+                  setTone(fs,500,450);
+                  setTone(d,500,150);
+                  setTone(g,500,eight);
+                  setTone(a,500,eight);
+                  setTone(b,500,quar);
+                  setTone(b,500,quar);
+                  setTone(b,500,eight);
+                  setTone(a,500,eight);
+                  setTone(g,500,quar);
+                  setTone(a,500,quar);
+                  setTone(g,1000,half);
+                  setTone(D, 500, eight);
+                  setTone(b, 500, eight);
+                  setTone(a, 500, quar);
+                  setTone(a, 500, quar);
+                  setTone(g, 500, eight);
+                  setTone(b, 500, eight);
+                  setTone(a, 500, quar);
+                  setTone(d, 500, quar);
+                  setTone(D, 500, eight);
+                  setTone(b, 500, eight);
+                  setTone(a, 500, quar);
+                  setTone(a, 500, quar);
+                  setTone(b, 500, eight);
+                  setTone(D, 500, eight);
+                  setTone(E, 1000, half);
+                  setTone(E, 500, eight);
+                  setTone(FS, 500, eight);
+                  setTone(G, 500, quar);
+                  setTone(FS, 500, quar);
+                  setTone(E, 500, quar);
+                  setTone(D, 500, quar);
+                  setTone(G, 500, quar);
+                  setTone(b, 500, quar);
+                  setTone(a, 500, eight);
+                  setTone(g, 500, eight);
+                  setTone(a, 500, quar);
+                  setTone(b, 500, quar);
+                  setTone(D, 1000, half);
+                  setTone(b, 500, eight);
+                  setTone(D, 500, eight);
+                  setTone(E, 500, quar);
+                  setTone(E, 500, eight);
+                  setTone(G, 500, eight);
+                  setTone(FS, 500, 450);
+                  setTone(D, 500, 150);
+                  setTone(G, 500, eight);
+                  setTone(A, 500, eight);
+                  setTone(G, 500, quar);
+                  setTone(FS, 500, quar);
+                  setTone(E, 500, eight);
+                  setTone(FS, 500, eight);
+                  setTone(E, 500, quar);
+                  setTone(D, 500, quar);
+                  setTone(b, 1000, half);
+
+                  setTone(b, 500, eight);
+                  setTone(D, 500, eight);
+                  setTone(E, 500, quar);
+                  setTone(E, 500, eight);
+                  setTone(G, 500, eight);
+                  setTone(FS, 500, 450);
+                  setTone(D, 500, 150);
+                  setTone(G, 500, eight);
+                  setTone(A, 500, eight);
+                  setTone(B, 500, quar);
+                  setTone(B, 500, quar);
+                  setTone(B, 500, eight);
+                  setTone(A, 500, eight);
+                  setTone(G, 500, quar);
+                  setTone(A, 500, quar);
+                  setTone(G, 1000, half);
+
+                  setColor(0,0,0);
+                     }
+
+                if(digitalRead(BUTTON2) == HIGH){
+                  delay(600);
+                  setTone(aa, 500, quar);
+                  setTone(a,500,quar);
+                  setTone(gs, 900, 900);
+                  setTone(d, 500, eight);
+                  setTone(f, 1200, half);
+                  setTone(aa, 1200, half);
+                  delay(quar);
+                  setTone(a,500,quar);
+                  setTone(gs, 900, 900);
+                  setTone(d, 500, eight);
+                  setTone(f, 1200, half);
+
+                  setColor(0,0,0);
+                  }
+
+                 }
+
+
+
+
+          </code></pre>
+            </div>
+
+
+      </div>
+        </div>
+
+        <div class="sticky-two-column">
+          <div class="sticky-left">
+            <h1>Kylo Ren Theme </h1>
+        <img class="sticky" src="images/week8/week8-12.png">
+          </div>
+          <div class="sticky-right">
+            <h1>Final Product</h1>
+            <br>
+            <br>
+            <video padding-top="50px" width="500" height="600" controls>
+          <source src="images/week8/week8-11.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    </div>
+
+
+    </div>
+    </div> <!-- Closes Container -->
+  </body>
+</html>
