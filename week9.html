@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Sonsie+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kristi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+      .content{
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      /*SCROLLBAR*/
+      ::-webkit-scrollbar{
+      	width: 7px;
+      }
+      ::-webkit-scrollbar-track{
+      	border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb{
+      	background: linear-gradient(125deg,#fff,#000);
+      	border-radius: 10px;
+      }
+      span{
+        position:absolute;
+        top: 2%;
+        left: 2%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+      .title{
+        width: 100%;
+        text-align: center;
+        height: 200px;
+      }
+      .title h1,.title h2{
+        font-family: 'Kristi', cursive;
+        margin: 0;
+        font-weight: 300;
+      }
+      .title h1{
+        font-size: 10em;
+        top: 0;
+        transform: translateY(-20%);
+      }
+      .title h2{
+        font-size: 8em;
+        top: 0;
+        transform: translateY(-110%);
+      }
+      .title a{
+        text-decoration: none;
+        color: #000;
+        position:absolute;
+        top: 10%;
+        left: 10%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+
+      .title a::after{
+      	content: '';
+      	display: block;
+      	width: 0;
+      	height: 2px;
+      	background: #000;
+      	transition: width .3s;
+      }
+      .title a:hover::after{
+      	width: 100%;
+      	transition: width 0.3s;
+      }/**************************************************************************/
+
+      .sticky-two-column{
+        display: grid;
+        grid-template-columns: 1fr 1fr; /*make 2 columns*/
+        width: 100%;
+      }
+      .sticky-right, .sticky-left{
+        padding: 1.25em;
+        padding-top: 0;
+        margin-top: 0;
+        font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      img.sticky{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 5%;
+        width: 90%;
+      }
+      .tab{
+        text-indent:40px;
+      }
+      .img-in-middle{
+        width: 600px;
+        text-align: center;
+        margin-left: 30%;
+        font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      .codeButton{
+        font-family: 'Nanum Gothic', sans-serif;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.0em;
+  font-weight: 600;
+  cursor: pointer;
+      }
+      .codeButton::after{
+      	content: '';
+      	display: block;
+      	width: 0;
+      	height: 2px;
+      	background: #000;
+      	transition: width .3s;
+      }
+      .codeButton:hover::after{
+      	width: 100%;
+      	transition: width 0.3s;
+      }/
+
+    </style>
+    <title>Week 8</title>
+    <script type="text/javascript">
+      function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function myFunction2() {
+var x = document.getElementById("myDIV2");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction3() {
+var x = document.getElementById("myDIV3");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction4() {
+var x = document.getElementById("myDIV4");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction5() {
+var x = document.getElementById("myDIV5");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction6() {
+var x = document.getElementById("myDIV6");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+function myFunction7() {
+var x = document.getElementById("myDIV7");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+}
+}
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+
+        <div class="title">
+          <span>PS70: Digital Fabrication</span>
+         <h1>Kassia</h1><br><br>
+         <h2>Love</h2>
+         <a href="index.html">Home</a>
+        </div>
+
+
+      </div>
+      <div class="content">
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week9/week9-1.jpg">
+      </div>
+      <div class="sticky-right">
+        <h1>Week 9: Electronic Output Devices</h1>
+    <p class="tab">
+    This week's assignment is to demonstrate 2 microcontrollers communicating over wired or radio connection.<br>
+
+First I played around with the examples of the Serial I/O and the UART on the class website. Through this I was able to get use to setting up the system to get one board to communicate with the other. Then I went into brainstorming what mini project I could do that used communication through 2 boards. I remember for last week's project that I want to have 2 buzzers harmonize with each other as I played a song, but it didn't seem possible with one board because there wasn't enough power running through both buzzers to pass a frequency through them. So this week I set up a system that has 2 boards communicating with each other via tones and note lengths. It is not really harmonizing as the interval of the 2nd buzzer is an arbitary number that I chose, but I was able to get the two buzzers to play notes at the same time with the same beat. I control the tone of the buzzers via a potentiometer. The note duration value is controlled by two buttons and there is an LED that shows what the note duration value is via blinking at that tempo. Overall, it is a very, very basic drum machine.
+
+<br><br>Materials needed are:
+
+<ul>
+  <li>2 buzzers</li>
+  <li>Metro/Uno board</li>
+  <li>ATSAMD11 board</li>
+  <li>2 Breadboard</li>
+  <li>1 LED</li>
+  <li>3 1k &Omega; Resistor</li>
+  <li>2 buttons</li>
+  <li>1 potentiometer</li>
+  <li>Wires</li>
+</ul>
+</p>
+
+</div>
+</div>
+
+<div class="sticky-two-column">
+
+  <div class="sticky-right">
+  <p>
+        To start off, I wanted to see what the potentiometer values are to see what type of tones I would be getting. So I connected the potiometer to the Metro via 5v, Ground, and A0. And I ran the serial read program that is in Arduino. Here I got values from 0 to 1023.
+  </p>
+
+    <a class ="codeButton" onclick="myFunction()">Click Here for Code for Serial Read of potiometer</a>
+  <div id="myDIV" style="display: none;">
+    <pre><code>
+      int buzzer = 7;
+
+      void setup(){
+        Serial.begin(9600);
+
+      }
+
+      void loop(){
+        int sensorValue = analogRead(A0);
+
+          Serial.println(sensorValue);
+
+          delay(1);
+
+      }
+
+</code></pre>
+  </div>
+
+    </div>
+    <div class="sticky-left">
+  <img class="sticky" src="images/week9/week9-2.jpg" style="transform: rotate(180deg)">
+    </div>
+
+    </div>
+
+
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/week9/week9-3.jpg">
+      </div>
+      <div class="sticky-right">
+    <p class="tab">
+
+Next I added the buzzer and coded the board to match the potentiometer values to frequencies to be played through the buzzer.
+  </p>
+  <video padding-top="50px" width="500" height="600" controls>
+<source src="images/week9/week9-4.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+  <a class ="codeButton" onclick="myFunction2()">Click Here for Code to control buzzer with potentiometer</a>
+
+  <div id="myDIV2" style="display: none;">
+    <pre><code>
+      potentiometer + buzzer
+      int buzzer = 7;
+
+      void setup(){
+        Serial.begin(9600);
+        pinMode(buzzer, OUTPUT);
+
+      }
+
+      void loop(){
+        int sensorValue = analogRead(A0);
+
+          Serial.println(sensorValue);
+          tone(buzzer, sensorValue/4, 100);
+          delay(10);
+
+      }
+
+</code></pre>
+  </div>
+
+    </div>
+    </div>
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <p class="tab">
+      Next I learned how to make an LED stay on when you push a button and stay off when you push the button again. To do this I had to create current and previous button states and run them through if/else statements to see if the button should be on or off. This will then be used to keep a certain beat/note value when a button is pressed instead of momentarily changing it when the button is pressed.
+    </p>
+
+<a class ="codeButton" onclick="myFunction3()">Click Here for code to the changing of LEDstates via a push button</a>
+
+<div id="myDIV3" style="display: none;">
+  <pre><code>
+    int led = 13;
+    int button = 12;
+
+    int ledState = HIGH;
+    int buttonCurrent;
+    int buttonPrevious = LOW;
+
+    void setup(){
+      pinMode(button, INPUT);
+      pinMode(led, OUTPUT);
+
+    }
+
+    void loop(){
+      buttonCurrent = digitalRead(button);
+
+       if (buttonCurrent == HIGH && buttonPrevious == LOW){
+          if(ledState == HIGH){
+              ledState = LOW;
+            }
+            else{
+              ledState = HIGH;
+              }
+        }
+
+      digitalWrite(led, ledState);
+      buttonPrevious = buttonCurrent;
+    }
+</code></pre>
+</div>
+
+
+    </div>
+      <div class="sticky-right">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <video padding-top="50px" width="500" height="600" controls>
+      <source src="images/week9/week9-5.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+      </div>
+        </div>
+
+
+        <div class="sticky-two-column">
+          <div class="sticky-left">
+            <br>
+            <video padding-top="50px" width="500" height="600" controls>
+          <source src="images/week9/week9-6.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+          </div>
+          <div class="sticky-right">
+  <p class="tab">
+    Next I added a button to make the notevalue change while the buzzer was playing. This constised of see the button state and see if it should be playing one note value versus the other.
+  </p>
+
+  <a class ="codeButton" onclick="myFunction4()">Click Here for code for changing the note value</a>
+
+  <div id="myDIV4" style="display: none;">
+    <pre><code>
+      int buzzer = 9;
+      int button = 7;
+
+      void setup(){
+        Serial.begin(9600);
+        pinMode(buzzer, OUTPUT);
+        pinMode(button, INPUT);
+
+      }
+
+      void loop(){
+        int sensorValue = analogRead(A0);
+        int noteValue;
+
+        int buttonState = digitalRead(button);
+        Serial.println(buttonState);
+
+
+
+        if(buttonState == 1){
+          noteValue = 100;
+          }
+         else{
+          noteValue = 500;
+          }
+          tone(buzzer, sensorValue, noteValue);
+          delay(noteValue);
+
+      }
+  </code></pre>
+  </div>
+      </div>
+        </div>
+
+
+
+        <div class="sticky-two-column">
+          <div class="sticky-left">
+            <br>
+            <br>
+            <video padding-top="50px" width="500" height="600" controls>
+          <source src="images/week9/week9-7.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+          </div>
+          <div class="sticky-right">
+            <p class="tab">
+              Next I add a second button to get a different note value. After this, this concludes what is needed for one of the boards, and I am ready to transmit code to another board to convert that to playing a second buzzer.
+              </p>
+
+            <a class ="codeButton" onclick="myFunction5()">Click Here code to control buzzer notevalue with 2 buttons</a>
+
+            <div id="myDIV5" style="display: none;">
+              <pre><code>
+                int buzzer = 9;
+                int button1 = 7;
+                int button2 = 6;
+
+                int noteValue = 500;
+                int button1Current;
+                int button1Previous = 0;
+                int button2Current;
+                int button2Previous = 0;
+
+                void setup(){
+                  Serial.begin(9600);
+                  pinMode(buzzer, OUTPUT);
+                  pinMode(button1, INPUT);
+                  pinMode(button2, INPUT);
+
+                }
+
+                void loop(){
+                  int sensorValue = analogRead(A0);
+                  button1Current = digitalRead(button1);
+                  button2Current = digitalRead(button2);
+
+                  if (button1Current == HIGH && button1Previous == LOW){
+                    if(noteValue == 500 or noteValue == 300){
+                      noteValue = 100;
+                      }
+                     else{
+                      noteValue = 500;
+                      }
+                    }
+                if (button2Current == HIGH && button2Previous == LOW){
+                    if(noteValue == 500 or noteValue == 100){
+                      noteValue = 300;
+                      }
+                     else{
+                      noteValue = 500;
+                      }
+                    }
+
+                    tone(buzzer, sensorValue/3, noteValue);
+                    delay(noteValue);
+                    button1Previous = button1Current;
+                    button2Previous = button2Current;
+
+                }
+
+          </code></pre>
+            </div>
+
+
+      </div>
+        </div>
+
+        <div class="sticky-two-column">
+          <div class="sticky-left">
+            <p class="tab">
+              So after getting the setup for one board, I put this setup to the ATSAMD11 board. Then to set up the serial UART, I had to establish a power that connects the two and establish a common ground. With this I just added a buzzer to the metro, and made the ATSAMD11 board the transmitter (TX) and the Metro/Uno the receiver (RX). So the first bit of information that needs to be sent over is the value on the potentiometer so the second buzzer knows what to play. The second bit of information that needs to be sent over it the note value so the second buzzer will line up tempo-wise with the first buzzer.
+              </p>
+              <p class="tab">
+                So first to get the potentiometer value to send over, I Serial1.write(potentiometer value). Then I needed to send over the notevalue over, so after sending over the potentiometer value, I put a quick delay and then did a Serial1.write(notevalue). So in this way it was sending 2 pieces of information one after another.
+              </p>
+              <p class="tab">
+                So then on the receiver, it has to interpret these two pieces of information. To start off, I made the receiver wait until there were two pieces of information to process. I did this by setting a while loop. The while loop being: while(Serial.available() < 2){delay} for sometime.
+                After this, the first Serial.read maps to the frequency that needs to be play and the second Serial.read maps to the notevalue that needs to be played.
+              </p>
+              <p class="tab">
+                After getting the buttons to play at the same time, I just made the second buzzer to play 300hz above the given value. And then I add a if statement to make the second buzzer to turn off if it receives a potentiometer value of 0 so that both buzzers are silent when I turn the potentiometer all the way down.
+              </p>
+              <p class="tab">
+                To finish it off, I added an LED to the ATSAMD11 board to physically show what the tempo was based off of the LED blinking.
+              </p>
+
+              <a class ="codeButton" onclick="myFunction6()">Click Here final code for receiver</a>
+
+              <div id="myDIV6" style="display: none;">
+                <pre><code>
+const int buzzer2 = 7;
+
+void setup() {
+  pinMode(buzzer2, OUTPUT);
+
+  Serial.begin(9600);
+}
+
+
+void loop() {
+  while (Serial.available() < 2) {   //Wait for 2 values
+    delay(5);
+}
+  byte rec_byte =  Serial.read();   //Here is where the incoming byte is read.
+  byte sec_byte = Serial.read();
+  if (rec_byte < 30){ //
+      noTone(buzzer2);
+    }
+  else{
+    int harmony = rec_byte + 300;     //Take the frequency and add 300hz
+    int noteValue = sec_byte;
+
+  tone(buzzer2, harmony, noteValue);
+  delay(noteValue);
+  Serial.println(noteValue);
+  }
+}
+
+            </code></pre>
+              </div>
+
+              <a class ="codeButton" onclick="myFunction7()">Click Here final code for transmitter</a>
+
+              <div id="myDIV7" style="display: none;">
+                <pre><code>
+const int pot_pin = 2;
+const int buzzer = 4;
+const int button1 = 5;
+const int button2 = 8;
+const int button3 = 15;
+const int led = 14;
+
+int noteValue = 250;
+int button1Current;
+int button1Previous = 0;
+int button2Current;
+int button2Previous = 0;
+
+
+
+void setup() {
+  Serial.begin(0);
+  Serial1.begin(9600);
+  pinMode(buzzer, OUTPUT);
+  pinMode(button1, INPUT);
+  pinMode(button2, INPUT);
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+
+int pot_value = analogRead(pot_pin);
+button1Current = digitalRead(button1);
+button2Current = digitalRead(button2);
+
+if (button1Current == HIGH && button1Previous == LOW){
+    if(noteValue == 250 or noteValue == 125){
+      noteValue = 75;
+      }
+     else{
+      noteValue = 250;
+      }
+    }
+if (button2Current == HIGH && button2Previous == LOW){
+    if(noteValue == 250 or noteValue == 75){
+      noteValue = 125;
+      }
+     else{
+      noteValue = 250;
+      }
+    }
+int ledState;
+
+if(pot_value < 10){ //
+  ledState = LOW;
+  } //
+  else{
+    ledState = HIGH;
+    } //
+
+
+    tone(buzzer, pot_value, noteValue);
+    digitalWrite(led, ledState);
+    ledState = LOW;
+    delay(noteValue); //
+    digitalWrite(led, ledState);
+    delay(noteValue);
+    button1Previous = button1Current;//
+    button2Previous = button2Current;
+
+
+Serial.println(pot_value);
+Serial1.write(pot_value/2);
+delay(5);
+Serial1.write(noteValue); //Send also the noteValue
+delay(10);
+
+}
+
+              </code></pre>
+              </div>
+
+
+          </div>
+          <div class="sticky-right">
+            <br>
+            <br>
+            <video padding-top="50px" width="500" height="600" controls>
+          <source src="images/week9/week9-8.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+      </div>
+        </div>
+
+
+
+    </div>
+    </div> <!-- Closes Container -->
+  </body>
+</html>
