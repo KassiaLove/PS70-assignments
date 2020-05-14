@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <pre>
+      <code>
+
+        //Create a form that takes an input of Hour and input of minute and a button with a type ="Submit".
+
+
+        // The core Firebase JS SDK is always required and must be listed first
+        	//script script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        	     https://firebase.google.com/docs/web/setup#available-libraries
+        	//script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"
+
+        	//script tag
+        	// Your web app's Firebase configuration
+        	var firebaseConfig = {
+            apiKey: "#",
+            authDomain: "#",
+            databaseURL: "#",
+            projectId: "#",
+            storageBucket: "#",
+            messagingSenderId: "#",
+            appId: "#"
+        	};
+
+        	// Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+
+        // Reference messages collection
+        var messagesRef = firebase.database().ref('messages');
+        var ref = firebase.database().ref("/");
+
+
+        	// Get a database reference to our blog
+        //Listen for a Submit
+        document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+
+        //Submit form
+        function submitForm(e){
+          e.preventDefault();
+
+          //Get values
+          var hour = getInputVal('hour');
+          var min = getInputVal('min');
+
+
+          //Save message
+          sendAlarm(hour, min);
+
+          console.log(hour);
+        }
+
+        //Function to get form values
+        function getInputVal(id){
+          return document.getElementById(id).value;
+
+        }
+
+        //Send time to Firebase
+        function sendAlarm(hour, min){
+          ref.update({
+            "TIME_HOUR": hour,
+            "TIME_MIN": min
+
+          });
+
+
+        }
+
+            //end script tag
+
+    -->
+    </code>
+    </pre>
+
+  </body>
+</html>

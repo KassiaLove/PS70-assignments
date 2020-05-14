@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <pre>
+      <code>
+        //Put <> around the included libraries
+        #include time.h
+
+        #include WiFi.h
+        #include HTTPClient.h
+        #include ArduinoJson.h
+        #include Arduino.h
+        #include analogWrite.h
+
+        const char* ssid = "#;
+        const char* password =  "#";
+
+        int timezone = 1;
+        int dst = 0;
+
+        void setup() {
+          Serial.begin(115200);
+          Serial.setDebugOutput(true);
+
+          WiFi.mode(WIFI_STA);
+          WiFi.begin(ssid, password);
+          Serial.println("\nConnecting to WiFi");
+          while (WiFi.status() != WL_CONNECTED) {
+            Serial.print(".");
+            delay(1000);
+          }
+
+          configTime(-5 * 3600, 0, "pool.ntp.org", "time.nist.gov"); //-5 is Central Time
+          Serial.println("\nWaiting for time");
+          while (!time(nullptr)) {
+            Serial.print(".");
+            delay(1000);
+          }
+          Serial.println("");
+        }
+
+        void loop() {
+          time_t now = time(nullptr);
+          Serial.println(ctime(&now));
+          delay(1000);
+        }
+
+        now i need to figure out how to extract just the time part of it
+
+        Now we have the alarm part of the alarm clock
+        //get the time
+            time_t now = time(nullptr);
+            Serial.println(ctime(&now));
+            String time_rn = ctime(&now);
+            time_rn.remove(0,11);
+            time_rn.remove(5,8);
+            Serial.println(time_rn);
+            time_rn.remove(2,4);
+            String hrval = time_rn;
+
+            String time_rn2 = ctime(&now);
+            time_rn2.remove(0,11);
+            time_rn2.remove(5,8);
+            Serial.println(time_rn2);
+            time_rn2.remove(0,3);
+            time_rn2.remove(2,1);
+            String minval = time_rn2;
+
+        Serial.println("hr:" + hrval);
+        Serial.println("min:" + minval);
+
+          //int time_hr = time_rn(0,1);
+          //int time_min = time_rn(3,4);
+          //Serial.println(time_hr);
+          //Serial.println(time_min);
+
+        Serial.println("Checking the alarm");
+        Serial.println(hrval.equals(alarm_hr));
+
+        Serial.println(minval.length());
+        Serial.println(alarm_hr.length());
+
+        if(hrval.equals(alarm_hr) == 1 && minval.equals(alarm_min)){
+
+          Serial.println("they equal");
+            // Navigate through JSON document, extracting some values
+          const int temp = doc["properties"]["periods"][0]["temperature"];
+          Serial.print("All I care about is the current weather, which is ");
+          Serial.print(temp);
+
+
+
+        getColor(temp);
+
+
+           delay(10000);
+          }
+
+          else{
+            Serial.println("nope");
+            delay(5000);
+            }
+    </code>
+    </pre>
+
+  </body>
+</html>

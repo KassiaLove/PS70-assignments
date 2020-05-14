@@ -1,0 +1,144 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+  <script src="alarmclock.js"></script>
+  <title>Alarm Clock</title>
+  <style>
+    body{
+      width: 500px;
+    }
+    .gridForm{
+      display: grid;
+    	grid-template-columns: 1fr 1fr; /*make 2 columns*/
+      width: 100%;
+    }
+    .inputNum{
+      width: 200px;
+      height: 200px;
+      padding: 0;
+      margin-left: 30px;
+      box-sizing: border-box;
+      font-size: 10em;
+      background: transparent;
+      border: 0.0125em solid #fff;
+      color: #fff;
+    }
+    label{
+      font-family: 'Rock Salt', cursive;
+      margin-left: 80px;
+      color: #fff;
+      font-weight: 600;
+      width: 100%;
+      font-size: 3em;
+    }
+    #hourL{
+      margin-left: 50px;
+    }
+    button{
+      position: relative;
+      left: 50%;
+      padding: 0.5em 1em;
+      border: 0.16em solid #fff;
+      box-sizing: border-box;
+      test-decoration: none;
+      text-align: center;
+      transition: all 0.15s;
+      color: #fff;
+      background: #000;
+    }
+    button:hover{
+      background: #fff;
+      color: #000;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <form autocomplete="off" class="gridForm" id = "contactForm">
+    <div>
+  <label id="hourL" for="hour">Hour</label><br>
+  <input class="inputNum" type="text" id="hour"><br><br>
+    </div>
+    <div>
+  <label for="min">Min</label><br>
+  <input class= "inputNum" type="text" id="min"><br><br>
+    </div>
+
+  <button type="submit"> SET ALARM </button>
+
+</form>
+
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+
+	<script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+    apiKey: "AIzaSyAt_yu1QhHaJjZq_rChWMj42PaUco9-M_Q",
+    authDomain: "alarmclock-a0385.firebaseapp.com",
+    databaseURL: "https://alarmclock-a0385.firebaseio.com",
+    projectId: "alarmclock-a0385",
+    storageBucket: "alarmclock-a0385.appspot.com",
+    messagingSenderId: "701682057949",
+    appId: "1:701682057949:web:b2ea83ddc5783c14b15134"
+	};
+
+	// Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+// Reference messages collection
+var messagesRef = firebase.database().ref('messages');
+var ref = firebase.database().ref("/");
+
+
+	// Get a database reference to our blog
+//Listen for a Submit
+document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+
+//Submit form
+function submitForm(e){
+  e.preventDefault();
+
+  //Get values
+  var hour = getInputVal('hour');
+  var min = getInputVal('min');
+
+
+  //Save message
+  sendAlarm(hour, min);
+
+  console.log(hour);
+}
+
+//Function to get form values
+function getInputVal(id){
+  return document.getElementById(id).value;
+
+}
+
+//Send time to Firebase
+function sendAlarm(hour, min){
+  ref.update({
+    "TIME_HOUR": hour,
+    "TIME_MIN": min
+
+  });
+
+
+}
+
+    </script>
+
+</body>

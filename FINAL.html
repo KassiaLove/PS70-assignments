@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Sonsie+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kristi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+      .content{
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      /*SCROLLBAR*/
+      ::-webkit-scrollbar{
+      	width: 7px;
+      }
+      ::-webkit-scrollbar-track{
+      	border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb{
+      	background: linear-gradient(125deg,#fff,#000);
+      	border-radius: 10px;
+      }
+      span{
+        position:absolute;
+        top: 2%;
+        left: 2%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+      .title{
+        width: 100%;
+        text-align: center;
+        height: 200px;
+      }
+      .title h1,.title h2{
+        font-family: 'Kristi', cursive;
+        margin: 0;
+        font-weight: 300;
+      }
+      .title h1{
+        font-size: 10em;
+        top: 0;
+        transform: translateY(-20%);
+      }
+      .title h2{
+        font-size: 8em;
+        top: 0;
+        transform: translateY(-110%);
+      }
+      .title a{
+        text-decoration: none;
+        color: #000;
+        position:absolute;
+        top: 10%;
+        left: 10%;
+        font-size: 3em;
+        font-family: 'Kristi', cursive;
+      }
+
+      .title a::after{
+      	content: '';
+      	display: block;
+      	width: 0;
+      	height: 2px;
+      	background: #000;
+      	transition: width .3s;
+      }
+      .title a:hover::after{
+      	width: 100%;
+      	transition: width 0.3s;
+      }/**************************************************************************/
+
+      .sticky-two-column{
+        display: grid;
+        grid-template-columns: 1fr 1fr; /*make 2 columns*/
+        width: 100%;
+      }
+      .sticky-right, .sticky-left{
+        padding: 1.25em;
+        padding-top: 0;
+        margin-top: 0;
+        font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+      img.sticky{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 5%;
+        width: 90%;
+      }
+      .tab{
+        text-indent:40px;
+      }
+      .img-in-middle{
+        width: 600px;
+        text-align: center;
+        margin-left: 30%;
+        font-size: 1.5em;
+        font-family: 'Nanum Gothic', sans-serif;
+      }
+    </style>
+    <title>Final Project</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+
+        <div class="title">
+          <span>PS70: Digital Fabrication</span>
+         <h1>Kassia</h1><br><br>
+         <h2>Love</h2>
+         <a href="index.html">Home</a>
+        </div>
+
+
+      </div>
+      <div class="content">
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+        <video padding-top="50px" width="700" height="700" controls>
+      <source src="images/final/FinalDemo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+      </div>
+      <div class="sticky-right">
+        <h1>Final Project</h1>
+    <p class="tab">
+      For my final project, I decided to make a LED alarm clock. I've seen the concept of sunrise alarm clocks on Youtube and want to make a nice colorful clock myself. Not having all the resources that I would have in the lab, I did my best with stuff I could find around my family's apartment. The overall mechanism of the alarm clock is that I gets the temperature at the current time and then goes through a red, green, or blue color sequence while a buzzer goes off. And to turn off the alarm clock you simply have to unplug.
+    </p>
+    <h3>Materials Used</h3>
+    <ul>
+      <li><a href="https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/downloads" style="text-decoration: none; color: #0000EE">Adafruit HUZZAH32 - ESP32 Feather</a></li>
+      <li>Buzzer</li>
+      <li><a href="https://www.amazon.com/LampVPath-12Packs-solderless-breadboard-Arduino/dp/B01KKE602W" style="text-decoration: none; color: #0000EE">Mini Breadboard</a></li>
+      <li>5 RGB LEDs</li>
+      <li><a href="https://www.bhphotovideo.com/c/product/1394832-REG/acellories_pb400_b_2000_mah_rubberized_power.html" style="text-decoration: none; color: #0000EE">5V Power Bank</a></li>
+      <li>Cardboard (I used cardboard from an Amazon box)</li>
+      <li> Small Plastic Cup</li>
+      <li> Thin Clear Plastic (I ripped mine from a shipping plastic pouch)</li>
+      <li> Hot Glue</li>
+    </ul>
+    <h3>Technology Used</h3>
+    <ul>
+      <li>Arduino IDE</li>
+      <li>Firebase</li>
+      <li>p5.js</li>
+      <li>Fusion360</li>
+      <li>Weather API</li>
+    </ul>
+    </div>
+    </div>
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/final/final2.png">
+    <p style="margin-left: 25%;">Mechanism Diagram</p>
+    <br>
+    <br>
+    <br>
+      </div>
+      <div class="sticky-right">
+        <img class="sticky" src="images/final/final3.png">
+        <p style="margin-left: 30%;">Circuit Diagram</p>
+        <br>
+        <br>
+        <br>
+    </div>
+    </div>
+
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+        <h3> Day 1 </h3>
+        <p class="tab">
+          Today's goal is to make the housing for the LEDs and to get started on the if statement for changing the LEDs color based on the weather.
+
+          So at first I was planning on using a Stabucks cap as the base, but when it came to cutting out material from it with scissors, I was not successful. So, I changed to making the base out of cardboard.
+
+          So to make the housing, I cut out some pieces of cardboard and hot glued them together. I had four 8cm x 5cm side pieces and two 8cm x 8cm pieces for the top and bottom. And then a circle was cut out of the top piece to allow for the small plastic bowl to come through. All but the bottom was glued together.
+
+          Next I put together a simple circuit of RGB LEDs to simulate color changes and to see how it would look. I put it on a small breadboard. To get a nice faded color effect from the LEDs, I add crumbled plastic to the plastic cup.
+
+          Then after that, I was going to put all this with the Huzzah and start to make the for loop with the Weather API.
+          The biggest trouble I was having loading the weather API is that there was an error with the deserialization of Json. After doing some research, I had to change the buffer size of the bytes from 10,000 to 15,000. For the weather API, I used <a href="https://api.weather.gov/gridpoints/TOP/31,80/forecast"> https://api.weather.gov/gridpoints/TOP/31,80/forecast</a>. This is for where I live in Texas, which is in Mansfield.
+        </p>
+
+        <h3>Code for day 1</h3>
+        <a href="codeforday1.html" style="text-decoration: none; color: #0000EE">Link to code for day 1</a>
+
+
+    </div>
+    <div class="sticky-right">
+        <img class="sticky" style="height: 500px; width: 400px;"src="images/final/final4.jpg">
+    </div>
+    </div>
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" style= "height: 500px; width: 600px;" src="images/final/final5.png">
+    <br>
+    <br>
+    <br>
+      </div>
+      <div class="sticky-right">
+        <img class="sticky" style= "height: 500px; width: 500px; margin-left: 10%;" src="images/final/final6.jpg">
+        <p style="margin-left: 30%;">The cut away failed</p>
+        <br>
+        <br>
+        <br>
+    </div>
+    </div>
+
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" style= "height: 500px; width: 600px;" src="images/final/final7.png">
+    <br>
+    <br>
+    <br>
+      </div>
+      <div class="sticky-right">
+        <img class="sticky" style= "height: 500px; width: 500px; margin-left: 10%;" src="images/final/final8.jpg">
+        <p style="margin-left: 30%;">Housing that works</p>
+        <br>
+        <br>
+        <br>
+    </div>
+    </div>
+
+
+    </div>
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+    <img class="sticky" src="images/final/final12.gif">
+      </div>
+      <div class="sticky-right">
+        <h3> Day 2-5 </h3>
+    <p>
+      DAY 2 : <br>
+
+      Next step after being able to retrieve the weather, I was to finally start making my if/else statement. The main problem I was having during this, was that the RGB LED wasn't turning on, even though it was being given a value. I realized that I was using pins that don't do digitalWrite. So by using the correct pins, it worked. The if statement I wrote was basic. If just had, if the temp is greater than 60, make it red. If it was in between 40 and 60 make it blue, and less than 40 would be green. So now it is time to add a cool fading affect with the colors.
+
+
+
+      Main problem at the end of build session was that the colors were not nicely changing like I wanted them to, and it might have to do with the Huzzah not having analog. When I put it on an Arduino Uno, it works, but not on the Huzzah. <br><br>
+
+
+
+      DAY 3 : <br>
+      Realizing I was using the wrong datasheet, my problem came down to the Huzzah not having an analogWrite. This problem was fixed by getting another library for the ESP32 that has analogWrite. One can find the library at this link: <a href="https://github.com/ERROPiX/ESP32_AnalogWrite" style="text-decoration: none; color: #0000EE">https://github.com/ERROPiX/ESP32_AnalogWrite</a>. At the end of today I had the light sequence to match some set thresholds of the temperature at the time of the alarm. Next I need to start actaully implement the sound part of the alarm clock. <br><br>
+
+
+      DAY 4 & 5: <br>
+      Over the next 2 days I want to have the alarm part fully implemented so that the rest of the week is making an interface to set up the alarm using like p5.js. Since I was having trouble with the sound module on the Huzzah, I was getting really frustrated as I could not figrue out the serial connection to just let the buzzer play. But after some looking around I learned that the tone function on the Huzzah is actually ledcWriteTone. And there is also ledcWriteNote that lets you just put note names and octaves, which is very convienient. How to use PWM for Arduino can be found at this link: <a href="https://randomnerdtutorials.com/esp32-pwm-arduino-ide/" style="text-decoration: none; color: #0000EE">https://randomnerdtutorials.com/esp32-pwm-arduino-ide/</a>
+    </p>
+    </div>
+    </div>
+
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+        <h3> Day 6 - 7</h3>
+    <p>
+      Day 6: <br>
+      These couple days have been dealing with how to get time from the internet and how to get my board speaking with firebase so that it can eventually talk to a website. For the time, I was getting it from time.nist.gov using the configTime code and having to use the Time.h library. So once it would get the time, it would cut down the string to 2 variables: hour and min. Then I would compare this time to the time I set the alarm to go off in Arduino. <br><br>
+  </p>
+      <h3>Code for Day 6</h3>
+      <a href="codeforday6.html" style="text-decoration: none; color: #0000EE">Link to code for day 6</a>
+    <p>
+      Day 7: <br>
+      Today was about getting the Huzzah to talk to the firebase. What I want to store and grab from the firebase is the hour and min for the alarm so that you can change the time of the alarm in a website browser. This was done by the following snippet of code:</p>
+      <pre><code>
+        // get TIME status input from firebase
+        Firebase.get(firebaseData, "/TIME_HOUR");
+        fireString = firebaseData.stringData();
+        alarm_Hour = fireString;
+        Firebase.get(firebaseData, "/TIME_MIN");
+        fireString = firebaseData.stringData();
+        alarm_Min = fireString;
+      </code></pre>
+
+      <p>It gets the alarm hour and min value and then compares that to the current time. After doing this I started to make a website where I could change the values of the alarm hour and alarm min so I can set the alarm to the time I want it to go off. </p>
+      <h3>Code for Day 7</h3>
+      <a href="codeforday7a.html" style="text-decoration: none; color: #0000EE">Link to Arduino code for day 7</a><br>
+      <a href="codeforday7f.html" style="text-decoration: none; color: #0000EE">Link to Website-Firebabse code for day 7</a>
+
+      </div>
+      <div class="sticky-right">
+        <img class="sticky" src="images/final/final9.png">
+    </div>
+    </div>
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+        <img class="sticky" src="images/final/final10.png">
+    </div>
+    <div class="sticky-right">
+
+      <h3> Day 9 </h3>
+      <p class="tab">
+      Day 9 :<br> On this day I started working with p5.js to make my alarm setting browser look more appealing. Using the tutorial from the Coding Train: <a href= "https://www.youtube.com/watch?v=E4RyStef-gY" style="text-decoration: none; color: #0000EE">https://www.youtube.com/watch?v=E4RyStef-gY</a> to get me started with p5.js. Initially I was trying to make a set of buttons that one could press to set the alarm, but that was proving a challenge that I could come to solve. So I stuck with typing in the numbers into an input. And then to make it look nice, I used the clock model that was used in the tutorial, with different colors, and placed it behind my inputs so there would be a current time in the background.
+      </p>
+
+      <a href="alarmClock.html" style="text-decoration: none; color: #0000EE">Link to the Set Alarm Browser</a>
+    </div>
+    </div>
+
+    <div class="sticky-two-column">
+      <div class="sticky-left">
+        <h3> Day 10 </h3>
+        <p>
+        Day 10 :<br> So today I started to wrap the project up. I painted the housing for the LEDs with black nail polish cause I didn't have paint. Then I added the rest of the color sequences to get 3 different colors sequences of red, blue, and green. And I also switch to a different method of getting the time since the method I was using before was only working some of the time. I used the NTP client to get the time with the ESP32. I got it from this tutorial: <a href="https://randomnerdtutorials.com/esp32-ntp-client-date-time-arduino-ide/" style="text-decoration: none; color: #0000EE">https://randomnerdtutorials.com/esp32-ntp-client-date-time-arduino-ide </a><br>
+
+        I wanted to make a mechanism that turned off the alarm by lifting the housing for the LEDs. I was planning on having a capacitive sensor to sense when the box was lifted off the table, but because of the way I made my cardboard box, that wasn't going to work. So then I tried to use a photoresistor to sense when it would be in all light versus being in all dark when on the table. I got really close but in the stage when it was on the table, it would sometimes send a signal that it would be in the light even though it wasn't, and terminate the alarm before one could even flip it upside down. These problem could probably be solved if I had a better base. <br><br>
+
+        <b style="font-weight: 600;">Things to improve going forward</b>: <br>
+        <ul>
+          <li>Having the ability to change time zones</li>
+          <li>Having a more fluid color change</li>
+          <li>Having the ability to get the weather for different places</li>
+          <li>Making a better base, maybe using resin/molding and 3d printing/lasercutting to allow for an efficient turning-off mechanism that uses sensors</li>
+          <li>Adding an LCD display to see the time and weather</li>
+        </ul>
+        </p>
+
+        <h3>Final Arduino Code</h3>
+        <a href="codefinal.html" style="text-decoration: none; color: #0000EE">Link to final code</a><br>
+
+        <a style="text-decoration: none; color: #0000EE" href="images/final/LEDBaseBox.stl" download>Download LED housing box base</a><br>
+        <a style="text-decoration: none; color: #0000EE" href="images/final/LEDBaseHead.stl" download>Download LED housing dome</a>
+    </div>
+    <div class="sticky-right">
+      <img class="sticky" src="images/final/final11.jpg">
+    </div>
+    </div>
+
+
+
+
+
+
+    </div>
+    </div> <!-- Closes Container -->
+  </body>
+</html>

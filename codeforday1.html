@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <pre>
+      <code>
+    int RED = 8;
+    int GREEN = 9;
+    int BLUE = 10;
+    int red = 11;
+    int green = 12;
+    int blue = 12;
+    int delayTime = 20;
+
+    void setup() {
+
+      pinMode(GREEN, OUTPUT);
+      pinMode(BLUE, OUTPUT);
+      pinMode(RED, OUTPUT);
+      digitalWrite(GREEN, HIGH);
+      digitalWrite(BLUE, HIGH);
+      digitalWrite(RED, HIGH);
+      pinMode(green, OUTPUT);
+      pinMode(blue,OUTPUT);
+      pinMode(red, OUTPUT);
+      digitalWrite(green, HIGH);
+      digitalWrite(blue, HIGH);
+      digitalWrite(red, HIGH);
+    }
+
+    int redVal;
+    int blueVal;
+    int greenVal;
+
+    void loop() {
+
+      int redVal = 255;
+      int blueVal = 0;
+      int greenVal = 0;
+      for( int i = 0 ; i < 255 ; i += 1 ){
+        greenVal += 1;
+        redVal -= 1;
+        analogWrite( GREEN, greenVal );
+        analogWrite( RED, redVal );
+        analogWrite(green, greenVal);
+        analogWrite(red, redVal);
+
+        delay( delayTime );
+      }
+
+      redVal = 0;
+      blueVal = 0;
+      greenVal = 255;
+      for( int i = 0 ; i < 255 ; i += 1 ){
+        blueVal += 1;
+        greenVal -= 1;
+        analogWrite( BLUE, blueVal );
+        analogWrite( GREEN, greenVal );
+        analogWrite(blue, blueVal);
+        analogWrite(green, greenVal);
+
+        delay( delayTime );
+      }
+
+        redVal = 0;
+        blueVal = 255;
+        greenVal = 0;
+        for( int i = 0 ; i < 255 ; i += 1 ){
+        redVal += 1;
+        blueVal -= 1;
+        analogWrite( RED, redVal );
+        analogWrite( BLUE, blueVal );
+        analogWrite(red, redVal);
+        analogWrite(blue, blueVal);
+
+        delay( delayTime );
+      }
+    }
+    </code>
+    </pre>
+
+  </body>
+</html>
